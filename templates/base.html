@@ -26,7 +26,10 @@
                                 </a>
                             </div>
                             <div class="col-md-6 col-12 order-3 order-md-2">
-                                <div class="header__logo">CARNERD</div>
+                                <div class="header__logo">
+                                    <img class="logo__img" src="{{url_for('static', filename='img/logo_auto.svg')}}" alt="">
+                                    <div class="logo__text">CARNERD</div>
+                                </div>
                             </div>
                             <div class="col-md-3 col-6 order-2 order-md-3 top_social-block">
 
@@ -51,12 +54,12 @@
                 <div class="container-fluid p-0">
                     <div class="row header__banner-top m-0">
                         <div class="carousel__top p-0">
-                            <div id="carouselExampleIndicators" class="carousel slide slider__top">
-                                <div class="carousel-indicators">
+                            <div id="carouselExampleAutoplaying" class="carousel slide slider__top" data-bs-ride="carousel">
+                                <!-- <div class="carousel-indicators">
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
+                                </div> -->
                                 <div class="carousel-inner">
                                   <div class="carousel-item slider__img active">
                                     <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">

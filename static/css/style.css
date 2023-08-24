@@ -72,9 +72,16 @@ a{
     font-family: cinzel;
     font-weight: 700;
     font-size: 40px;
+    line-height: 50px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.logo__img{
+    height: 53px;
+}
 
 .top_social-block{
     display: flex;
