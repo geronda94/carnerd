@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Inter:wght@100;200;400;500;600;700;800;900&display=swap');
 @font-face {
-    font-family: 'CustomFont'; /* Имя, которое будет использоваться для этого шрифта */
-    src: url('путь_к_файлу.woff') format('woff'), /* Формат WOFF */
-         url('путь_к_файлу.woff2') format('woff2'); /* Формат WOFF2 */
+    font-family: 'Myriad'; /* Имя, которое будет использоваться для этого шрифта */
+    src: url('../fonts/Myriad Pro Regular.ttf') format('truetype'), /* Формат TTF */
+         url('../fonts/Myriad Pro Black.otf') format('opentype'), /* Формат OTF */
+         url('../fonts/Myriad Pro Bold.ttf') format('truetype'), /* Формат TTF */
+         url('../fonts/Myriad Pro Light.otf') format('opentype'); /* Формат OTF */
     /* Дополнительные свойства шрифта, например, font-weight и font-style */
-  }
+}
+
 
 :root{
     --main-dark: #313131;
@@ -47,12 +50,19 @@ a{
     align-items: center;
 }
 
+.icon__link:hover,
+.icon__link:active
+{
+    color: var(--accent-color);
+    transition: 0.2s;
+}
+
 .social__icon{
     font-size: 21px;
 }
 
 .social__icon-text{
-    font-size: 16px;
+    font-size: 16px;    
     font-family: cinzel;
     font-weight: 500;
 }
@@ -60,7 +70,32 @@ a{
 .header__logo{
     color: var(--main-dark);
     font-family: cinzel;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 40px;
     text-align: center;
+}
+
+
+.top_social-block{
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+.carousel__top{
+    width: 100%;
+}
+
+.slider__top{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 500px;
+}
+
+.slider__img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }

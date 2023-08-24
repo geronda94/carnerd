@@ -21,22 +21,58 @@
                         <div class="row header__top-logo">
                             <div class="col-md-3 col-6 order-md-1">
                                 <a class="icon__link" href="tel:+40 792 884 381">
-                                    <div class="social__icon"><i class="fa-solid fa-phone" style="color: #313131;"></i></div> 
+                                    <div class="social__icon"><i class="fa-solid fa-phone"></i></div> 
                                     <div class="social__icon-text">079 288 43 81</div>
                                 </a>
                             </div>
                             <div class="col-md-6 col-12 order-3 order-md-2">
                                 <div class="header__logo">CARNERD</div>
                             </div>
-                            <div class="col-md-3 col-6 order-2 order-md-3">
+                            <div class="col-md-3 col-6 order-2 order-md-3 top_social-block">
+
+                                <a class="icon__link" href="https://wa.me/+40792884381" target="_blank">
+                                    <div class="social__icon" style="font-size: 23px;"><i class="fa-brands fa-whatsapp"></i></div> 
+                                </a>
+
+                                <a class="icon__link" href="#" target="_blank">
+                                    <div class="social__icon" ><i class="fa-brands fa-facebook"></i></div> 
+                                </a>
+
+                                <a class="icon__link" href="#" target="_blank">
+                                    <div class="social__icon" ><i class="fa-brands fa-instagram"></i></div> 
+                                </a>
 
                             </div>
                         </div>
                     </div>
                     
-                {% endblock top_header %}
+                {% endblock top_header %}                    
                 {% block slider_header %}
-            
+                <div class="container-fluid p-0">
+                    <div class="row header__banner-top m-0">
+                        <div class="carousel__top p-0">
+                            <div id="carouselExampleIndicators" class="carousel slide slider__top">
+                                <div class="carousel-indicators">
+                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item slider__img active">
+                                    <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item slider__img">
+                                    <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item slider__img">
+                                    <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                  </div>
+                                </div>
+                                
+                              </div>
+                        </div>
+                    </div>
+                </div>
                 {% endblock slider_header %}
                 {% block nav_header %}
             
