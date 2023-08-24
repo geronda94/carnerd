@@ -10,22 +10,40 @@
     <title>Carnerd - Spălătorie auto în București</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <div class="wrapper">
 
+        <header>
+            {% block header %}
+            
+                {% block top_header %}
+                    
+                    <div class="container-fluid">
+                        <div class="row header__top-logo">
+                            <div class="col-md-3 col-6 order-md-1">
+                                <a class="icon__link" href="tel:+40 792 884 381">
+                                    <div class="social__icon"><i class="fa-solid fa-phone" style="color: #313131;"></i></div> 
+                                    <div class="social__icon-text">079 288 43 81</div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-12 order-3 order-md-2">
+                                <div class="header__logo">CARNERD</div>
+                            </div>
+                            <div class="col-md-3 col-6 order-2 order-md-3">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            </div>
+                        </div>
+                    </div>
+                    
+                {% endblock top_header %}
+                {% block slider_header %}
+            
+                {% endblock slider_header %}
+                {% block nav_header %}
+            
+                {% endblock nav_header %}
+            {% endblock header %}
+        </header>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

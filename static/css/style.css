@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Inter:wght@100;200;400;500;600;700;800;900&display=swap');
+@font-face {
+    font-family: 'CustomFont'; /* Имя, которое будет использоваться для этого шрифта */
+    src: url('путь_к_файлу.woff') format('woff'), /* Формат WOFF */
+         url('путь_к_файлу.woff2') format('woff2'); /* Формат WOFF2 */
+    /* Дополнительные свойства шрифта, например, font-weight и font-style */
+  }
+
+:root{
+    --main-dark: #313131;
+    --main-light: #d3d3d3;
+    --accent-color:#456faf;
+    --second-text: #5a5a5a;
+}
+
+
+
+html, body {
+    color: var(--second-text);
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+.header__top-logo{
+    justify-items: center;
+    align-items: center;
+}
+
+
+.icon__link{
+    color: var(--main-dark);
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+
+.social__icon{
+    font-size: 21px;
+}
+
+.social__icon-text{
+    font-size: 16px;
+    font-family: cinzel;
+    font-weight: 500;
+}
+
+.header__logo{
+    color: var(--main-dark);
+    font-family: cinzel;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+}
