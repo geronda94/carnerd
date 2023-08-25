@@ -37,6 +37,11 @@ a{
 
 
 
+
+
+/* HEADER */
+
+/* top logo */
 .header__top-logo{
     justify-items: center;
     align-items: center;
@@ -86,15 +91,16 @@ a{
 
 
 
-
-
-
 .top_social-block{
     display: flex;
     justify-content: end;
     gap: 15px;
 }
 
+/* /top logo  */
+
+
+/* top slider  */
 .carousel__top{
     width: 100%;
 }
@@ -113,9 +119,9 @@ a{
     object-position: center;
 }
 
+/* /top slider  */
 
-
-
+/* navigation */
 .nav__body{
     background-color: #fff !important;
 }
@@ -168,35 +174,74 @@ a{
     border:1px solid var(--accent-color);
 }
 
-.lang__option:hover,
-.lang__option:active{
+li .lang__option:hover,
+li .lang__option:active{
     background-color: var(--accent-color);
     transition: 0.3s;
     color: #fff;
 }
 
 
-
 .select__lang-button{
     background-color: #fff !important;
     color: var(--second-text) !important;
     border: none;
+    border-radius: 0;
 }
+
+.select__lang-button:hover,
+.select__lang-button:active{
+    color: var(--accent-color) !important;
+
+}
+
 
 .select__lang-button:hover{
     color: var(--second-text);
 }
 
+.select__lang-button::after{
+    content: none !important    ;
+}
 
+.lang__option{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items:center;
+    gap: 15px;
+    height: 30px;
+    padding: 0 10px;
 
+}
 
+.lang__icon{
+   max-height: 25px;
+   height: 25px;
+}
 
+.lang__icon img{
+    height: 100%;
+}
 
+.headernav-scroll{
+    border-bottom: 1px solid var(--main-dark) ;
+    transition: 0.5s;
+}
 
+.headernav-scroll .nav-link{
+    padding: 5px 17px !important;
+}
 
+.select__lang-button{
+    --bs-btn-padding-x: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
-
-
+.navbar{
+    --bs-navbar-padding-y: 0;
+}
 
 @media (max-width:767px){
     .header__logo{
@@ -223,6 +268,10 @@ a{
     .lang_dropdown[data-bs-popper] {
         left: 0;
     }
+
+    .headernav-scroll .nav-link{
+        padding: 10px 20px !important;
+    }
 }
 
 @media (max-width:370px){
@@ -244,3 +293,93 @@ a{
         font-size: 14px;
     }
 }
+
+
+/* /navigation  */
+/* / HEAEDER */
+
+.section__title{
+    /* font-size: 35px; */
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Cinzel;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+ /* SECTION ADVANTAGES  */
+ .advantages{
+    background-color: var(--main-dark);
+    color: var(--main-light);
+}
+
+.row__advantages{
+    justify-content: center;
+    align-items: center;
+}
+
+.advantages__item{
+    display: flex;
+    flex-direction: column;
+}
+.advantages__img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantages__title{
+    font-family: cinzel;
+    font-size: 17pt;
+    text-align: center;
+    height: 130px;
+}
+
+
+
+
+
+@media(max-width:1070px) {
+    .advantages__title{
+        font-size: 16pt;
+    }
+
+}
+
+@media(max-width:991px) {
+    .advantages__title{
+        height: 100px;
+    }
+
+}
+
+@media(max-width:690px) {
+    .advantages__title{
+        font-size: 14pt ;
+    }
+
+}
+@media(max-width:575px) {
+    .advantages__img{
+        height: 140px;
+        max-height: 140px;
+    }
+    .advantages__img img{
+        height: 100%;
+    }
+
+    .advantages__title{
+        font-size: 13pt;
+        width: 80%;
+        height: 80px;
+        margin: 0 auto;
+    }
+}
+
+ /* /SECTION ADVANTAGES  */
+
+
