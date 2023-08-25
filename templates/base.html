@@ -27,7 +27,7 @@
                             </div>
                             <div class="col-md-6 col-12 order-3 order-md-2">
                                 <div class="header__logo">
-                                    <img class="logo__img" src="{{url_for('static', filename='img/logo_auto.svg')}}" alt="">
+                                    <img class="logo__img" src="{{url_for('static', filename='img/logo_auto2.svg')}}" alt="">
                                     <div class="logo__text">CARNERD</div>
                                 </div>
                             </div>
@@ -78,12 +78,65 @@
                 </div>
                 {% endblock slider_header %}
                 {% block nav_header %}
-            
+                <nav class="navbar navbar-expand-md bg-body-tertiary nav__body p-md-0">
+                    <div class="container-fluid">
+                      <label class="navbar-brand nav__label-hidden" for="navigation__togler">Menu</label>
+                    <button id="navigation__togler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                     
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Our services</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Location</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Contacts</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">About us</a>
+                          </li>
+                          
+                          
+                        </ul>
+                        <div class="dropdown select__lang">
+                            <button class="btn btn-secondary dropdown-toggle select__lang-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              EN
+                            </button>
+                            <ul class="dropdown-menu lang_dropdown ">
+                              <li><a class="dropdown-item lang__option" href="#">
+                                <div class="lang__name">RO</div>
+                                <div class="lang__icon">
+
+                                </div>
+                              </a></li>
+                              <li><a class="dropdown-item lang__option" href="#">
+                                <div class="lang__name">EN</div>
+                                <div class="lang__icon">
+
+                                </div>
+                              </a></li>
+                              <li><a class="dropdown-item lang__option" href="#">
+                                <div class="lang__name">УКР</div>
+                                <div class="lang__icon">
+                                    
+                                </div>
+                              </a></li>
+                            </ul>
+                          </div>
+
+                      </div>
+                    </div>
+                  </nav>
                 {% endblock nav_header %}
             {% endblock header %}
         </header>
     </div>
-
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eveniet sed id cupiditate optio consectetur natus nulla pariatur fuga voluptatem dolores impedit culpa beatae aut dicta, harum facere eligendi ratione.
+    Laboriosam, cumque eligendi nesciunt porro voluptatem cum velit, atque omnis saepe ratione quaerat vel numquam ab incidunt exercitationem aliquam, id in quas repellendus ipsum aperiam vitae amet. Sed, beatae eveniet!</h2>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     

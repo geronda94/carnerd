@@ -70,18 +70,24 @@ a{
 .header__logo{
     color: var(--main-dark);
     font-family: cinzel;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 40px;
     line-height: 50px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .logo__img{
-    height: 53px;
+    height: 40px;
 }
+
+
+
+
+
 
 .top_social-block{
     display: flex;
@@ -105,4 +111,136 @@ a{
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+
+
+
+.nav__body{
+    background-color: #fff !important;
+}
+
+
+.nav__label-hidden{
+    display: none;
+}
+
+.nav-link,.nav__label-hidden,navbar-toggler{
+    text-transform: uppercase;
+    color: var(--accent-color);
+    font-family: Myriad;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 10px 20px !important;
+}
+
+.nav-link.active{
+    color: var(--accent-color)!important;
+}
+
+.nav-link:hover, 
+.nav-link:active,
+.nav-link.active:hover,
+.nav-link.active:active{
+    background-color: var(--accent-color);
+    color: #fff !important;
+    transition: 0.3s;
+}
+
+
+.navbar-toggler-icon{
+    color: var(--accent-color) !important;
+    position: relative;
+}
+
+
+.select__lang{
+    min-width: 8rem !important;
+}
+
+
+.lang_dropdown[data-bs-popper] {
+    position: absolute;
+    min-width: 8rem !important;
+    left:0;
+    border-radius: 0;
+    border:1px solid var(--accent-color);
+}
+
+.lang__option:hover,
+.lang__option:active{
+    background-color: var(--accent-color);
+    transition: 0.3s;
+    color: #fff;
+}
+
+
+
+.select__lang-button{
+    background-color: #fff !important;
+    color: var(--second-text) !important;
+    border: none;
+}
+
+.select__lang-button:hover{
+    color: var(--second-text);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:767px){
+    .header__logo{
+        margin-top: 15px;
+    }
+
+    .social__icon{
+        font-size: 19px;
+    }
+    
+    .social__icon-text{
+        font-size: 14px;
+    }
+
+    .nav__label-hidden{
+        display:inline;
+
+    }
+
+    .nav-link{
+        text-align: center;
+    }
+
+    .lang_dropdown[data-bs-popper] {
+        left: 0;
+    }
+}
+
+@media (max-width:370px){
+    .logo__img{
+        height: 32px;
+    }
+
+    .header__logo{
+        font-size: 32px;
+        gap:15px;
+        margin-top: 10px;
+    }
+
+    .social__icon{
+        font-size: 17px;
+    }
+    
+    .social__icon-text{
+        font-size: 14px;
+    }
 }
