@@ -93,7 +93,7 @@
                       <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto  mb-lg-0">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Our services</a>
+                            <a class="nav-link active" aria-current="page" href="#our__services">Our services</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">Location</a>
@@ -192,6 +192,208 @@
                 </div>
             </div>
         </section>
+
+        <section class="services" id="our__services">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title__advantages section__title fs-1">Select Services</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="carouselExampleIndicators" class="carousel slide carousel__services">
+                        
+                        <div class="carousel__control-labels">
+                            <label class="service__label" for="slide-0">Body wash</label>
+                            <label class="service__label" for="slide-1">Complex wash</label>
+                            <label class="service__label" for="slide-2">Premium wash</label>
+                            <label class="service__label" for="slide-3">Interior cleaning</label>
+                            <label class="service__label" for="slide-4">Body polishing</label>
+                          </div>
+                        <div class="carousel-indicators services__nav">
+                          <button id="slide-0" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active services__button" aria-current="true" aria-label="Service 1"></button>
+                          <button id="slide-1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class=" services__button" aria-label="Service 2"></button>
+                          <button id="slide-2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class=" services__button" aria-label="Service 3"></button>
+                          <button id="slide-3" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class=" services__button" aria-label="Service 4"></button>
+                          <button id="slide-4" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" class=" services__button" aria-label="Service 5"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <div class="product__card">
+                                <div class="product__descriprion">
+                                    <h1 class="product__title">Body wash</h1>
+                                    <ul class="product__options">
+                                        <li> Thorough body wash</li>
+                                        <li> Car interior cleaning</li>
+                                        <li> Interior refresh</li>
+                                    </ul>
+                                    <form action="" class="order__product">
+                                        <div class="product__price">100 RON</div>
+                                        <button class="product__button">register</button>
+                                    </form>
+                                </div>
+                                <div class="product__img">
+                                    <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="carousel-item">
+                            <div class="product__card">
+                                <div class="product__descriprion">
+                                    <h1 class="product__title">Complex wash</h1>
+                                    <ul class="product__options">
+                                        <li> Thorough body wash</li>
+                                        <li> Car interior cleaning</li>
+                                        <li> Interior refresh</li>
+                                    </ul>
+                                    <form action="" class="order__product">
+                                        <div class="product__price">100 RON</div>
+                                        <button class="product__button">register</button>
+                                    </form>
+                                </div>
+                                <div class="product__img">
+                                    <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
+                                </div>
+                            </div>
+                          </div>
+                          </div>
+
+                          <div class="carousel-item">
+                            <div class="product__card">
+                                <div class="product__descriprion">
+                                    <h1 class="product__title">Premium wash</h1>
+                                    <ul class="product__options">
+                                        <li> Thorough body wash</li>
+                                        <li> Car interior cleaning</li>
+                                        <li> Interior refresh</li>
+                                    </ul>
+                                    <form action="" class="order__product">
+                                        <div class="product__price">100 RON</div>
+                                        <button class="product__button">register</button>
+                                    </form>
+                                </div>
+                                <div class="product__img">
+                                    <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
+                                </div>
+                            </div>
+                          </div>
+                          
+                          <div class="carousel-item">
+                            <div class="product__card">
+                                <div class="product__descriprion">
+                                    <h1 class="product__title">Interior cleaning</h1>
+                                    <ul class="product__options">
+                                        <li> Thorough body wash</li>
+                                        <li> Car interior cleaning</li>
+                                        <li> Interior refresh</li>
+                                    </ul>
+                                    <form action="" class="order__product">
+                                        <div class="product__price">100 RON</div>
+                                        <button class="product__button">register</button>
+                                    </form>
+                                </div>
+                                <div class="product__img">
+                                    <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="carousel-item">
+                            <div class="product__card">
+                                <div class="product__descriprion">
+                                    <h1 class="product__title">Body polishing</h1>
+                                    <ul class="product__options">
+                                        <li> Thorough body wash</li>
+                                        <li> Car interior cleaning</li>
+                                        <li> Interior refresh</li>
+                                    </ul>
+                                    <form action="" class="order__product">
+                                        <div class="product__price">100 RON</div>
+                                        <button class="product__button">register</button>
+                                    </form>
+                                </div>
+                                <div class="product__img">
+                                    <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button> -->
+
+
+                        <div class="carousel__control-labels mobile__control-labels">
+                            <label class="service__label" for="slide-0">Body wash</label>
+                            <label class="service__label" for="slide-1">Complex wash</label>
+                            <label class="service__label" for="slide-2">Premium wash</label>
+                            <label class="service__label" for="slide-3">Interior cleaning</label>
+                            <label class="service__label" for="slide-4">Body polishing</label>
+                          </div>
+                      </div>
+                </div>
+
+            </div>
+        </section>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi illum distinctio rem consequatur dolorum laborum minus in vitae, molestiae provident, qui repudiandae dolor quo, libero tempore voluptatibus exercitationem quod tenetur!
+        Magnam, ipsum soluta aliquam asperiores at ea quas possimus debitis ad tenetur doloribus autem illo pariatur veritatis inventore. Beatae recusandae amet unde possimus veniam sapiente aspernatur natus. Iure, vitae consectetur?
+        Tempora mollitia vero voluptatem voluptatibus sit tenetur excepturi ex aliquid eligendi ipsam, eos quo beatae unde? Repudiandae, eum necessitatibus itaque earum soluta laudantium inventore id in nostrum! Aliquid, error laborum.
+        Rerum ut corrupti inventore, perferendis delectus dicta voluptatibus perspiciatis, amet dolorem sunt ad ex totam, libero eos unde officia accusamus odit cupiditate eum. Molestias saepe non magnam maiores ab beatae!
+        Corporis pariatur recusandae laudantium officia eligendi nostrum, ipsum illum deleniti asperiores voluptatum eos praesentium, facere aut dolorum atque? Esse nulla cupiditate dolores? Iure tenetur voluptatum doloribus eos laborum doloremque harum!
+        Tenetur consequuntur obcaecati placeat a accusamus quis necessitatibus labore vel debitis, quidem sit, voluptatibus voluptatum accusantium impedit molestias ea exercitationem repellendus omnis? Obcaecati rem nesciunt repudiandae quod id itaque suscipit.
+        Dolorem exercitationem sit magni commodi molestiae nobis obcaecati quisquam cum, eum fuga unde ab provident iure nihil quae vitae id ipsam laudantium. Optio rem sapiente suscipit facere libero officia dolores.
+        Aperiam numquam, velit facilis rem iste corporis vero laudantium totam esse! Commodi adipisci suscipit ducimus optio eius similique ipsam aspernatur obcaecati, aliquam cumque rerum aperiam a sed repellendus quibusdam quam!
+        Quos accusantium, labore suscipit voluptatem incidunt ut eveniet voluptatibus libero debitis dolores numquam nisi quidem, enim illum quo optio corrupti facilis officiis inventore est ullam dolorum nulla fuga! Iure, cumque.
+        Nobis eveniet aliquid, ex veniam ducimus eos dolores deserunt velit soluta nam molestiae adipisci quisquam distinctio itaque doloremque. Est nobis beatae repellendus laborum quasi quisquam quia itaque magni ducimus velit.
+        Minus omnis suscipit tenetur, molestiae sapiente natus, neque aliquid veniam illum corrupti repudiandae voluptas aliquam dignissimos quae nesciunt, consequuntur consequatur id mollitia dolore veritatis! Voluptate vitae ducimus repellendus beatae. Animi.
+        Nisi incidunt explicabo impedit aspernatur voluptatum! Doloribus possimus itaque quos consequuntur velit mollitia ex non placeat odit maiores dolorum repellat, veritatis praesentium. Quibusdam esse aspernatur possimus beatae maxime! Laborum, a?
+        Quae aut, est quasi similique perferendis culpa ipsa provident et officia, officiis nisi, temporibus modi laborum quas dignissimos obcaecati eveniet dolores a numquam omnis sapiente? Accusantium architecto alias quos culpa.
+        Ex nostrum eius omnis tempore velit, magnam unde nesciunt doloremque obcaecati harum quia iste assumenda accusamus magni quis! Rerum in magni ut tempore commodi fugit rem quis necessitatibus, laborum iste?
+        Ipsam laudantium ex qui minima quibusdam itaque aliquam, ea architecto! Molestias incidunt odio deleniti possimus vel quod delectus nesciunt aliquam nostrum esse veniam voluptatibus deserunt doloribus, a optio nulla inventore.
+        Animi iste pariatur praesentium repellat omnis temporibus repudiandae eius maxime nobis commodi. Fuga cupiditate natus quidem? Culpa cupiditate est, neque delectus perspiciatis animi asperiores recusandae deleniti modi aut, suscipit nisi.
+        Molestiae dolore totam, animi ratione maiores quisquam. Omnis incidunt mollitia placeat inventore aliquid harum vero nostrum sed reprehenderit obcaecati tempora laboriosam, excepturi molestias perspiciatis, aperiam nisi assumenda! Tenetur, esse quam?
+        Soluta ipsum illum et eligendi dolor? Molestiae a id voluptatibus reprehenderit doloremque mollitia officia ducimus, eum sunt quas consectetur culpa nobis nostrum perferendis fugiat eius fugit consequatur explicabo quaerat deleniti.
+        Architecto id maiores doloremque ratione assumenda error vel, tempore necessitatibus nulla explicabo praesentium sed cumque consectetur rem distinctio voluptas doloribus, temporibus dicta, sunt perferendis magnam dolorum natus aut. Omnis, voluptate.
+        Molestias eaque quia sequi tempora illum fugiat repellendus odit nam nulla. Quam incidunt enim libero culpa fuga quod a dignissimos doloremque iusto aperiam, laboriosam debitis laudantium esse aut, quas eligendi!
+        Consectetur fugiat natus repellendus aliquam illum eaque debitis? Sit optio quis cumque, dignissimos pariatur officia dolore nemo explicabo doloribus molestiae, laudantium eligendi id quas deleniti veritatis odit odio eos labore?
+        Sint inventore tenetur architecto dolores reprehenderit porro soluta pariatur, sequi qui accusantium veniam nostrum magnam nemo earum suscipit, quisquam numquam cupiditate dolore at iusto et laborum! Earum modi commodi cupiditate!
+        Quibusdam iusto molestias aliquam accusamus ipsa non facere, quos ex enim quam sit dolor inventore, qui ut quae cum architecto facilis quod sed fuga eveniet incidunt. Ullam aliquid pariatur facilis.
+        Magnam distinctio sapiente nihil expedita dicta. Nisi dicta assumenda debitis nihil rem facilis ex fugit. Provident ab natus debitis quas architecto nemo ad nobis error explicabo hic non, voluptatem itaque.
+        Modi, animi quod recusandae libero harum eligendi accusamus illum quos ipsum possimus placeat mollitia! Blanditiis dolor dicta assumenda. Odio voluptatibus quisquam et animi iste assumenda excepturi corrupti consequatur sed quidem!
+        Ratione enim saepe aliquid, possimus inventore molestiae dolore. Facere, atque, ullam similique nam ex veniam dolorem iusto, cumque beatae perspiciatis maiores deserunt placeat nobis animi. Illum quas ipsam neque ratione!
+        Necessitatibus soluta harum, eligendi in veniam illum. Laudantium, assumenda error accusamus quas necessitatibus nisi vero consectetur! Facere blanditiis minima voluptatem, repellat vel excepturi, iste ut, ipsum veritatis id quae velit!
+        Doloribus neque temporibus aliquid porro laudantium suscipit repellat maxime distinctio iusto enim libero, excepturi ipsam maiores illo beatae eius repellendus asperiores error modi debitis quam dolorum vel numquam deserunt! Atque!
+        Iusto pariatur quo inventore unde. Maiores doloribus ex consequatur eius deleniti laboriosam et! Nisi deleniti id a sunt incidunt aspernatur, aperiam in et sint nesciunt accusantium dolorum necessitatibus blanditiis amet?
+        Sequi, labore, cupiditate blanditiis corporis minima enim eius neque asperiores dolorem sed harum a fuga quisquam tenetur debitis earum quam laborum. Eveniet quibusdam aperiam exercitationem tempora unde magnam quod! Culpa.
+        Animi corrupti eveniet deleniti consectetur voluptatibus? Molestias, autem placeat consequuntur iure ad possimus amet dolores ea dicta magni accusamus illum. Nostrum non autem iusto impedit ab praesentium facilis, maiores amet?
+        Eligendi, repudiandae ipsum nobis sed ducimus beatae veniam nemo laudantium in eum sunt libero officiis reprehenderit ab incidunt nihil repellendus expedita molestias! Est accusantium nemo quia dolor error et voluptatibus.
+        Iure, inventore illum ex deleniti, voluptas iusto natus quos eaque consequuntur, consequatur recusandae cupiditate pariatur vero amet deserunt animi excepturi laboriosam illo! Ipsum qui modi expedita! Assumenda neque labore omnis!
+        Et dolore reiciendis impedit. Voluptatibus eaque similique placeat perspiciatis quo corporis aut at aspernatur perferendis quisquam velit dignissimos mollitia ratione sint, ducimus delectus. Sequi, quaerat consequuntur itaque nesciunt iusto sed.
+        Debitis voluptate natus aspernatur veniam consequatur atque sequi doloremque quibusdam repellat iste, ratione qui totam maiores. Mollitia nisi, fuga distinctio quisquam autem voluptatum error necessitatibus libero repudiandae nulla. Tenetur, veniam.
+        Id, delectus adipisci! Odit totam minima at, explicabo ut eligendi sapiente. Totam explicabo, ratione dolor sit eveniet atque amet quisquam ducimus autem cum voluptate ex in! Placeat praesentium corrupti ducimus.
+        Aliquam illo, tenetur quam aliquid doloremque quaerat fugit ex fugiat neque rerum eligendi, vero, odio eius. In necessitatibus consectetur at quae sapiente amet enim iusto voluptates, quas id qui quod.
+        Sit nobis deserunt doloribus dignissimos deleniti alias earum impedit architecto corporis neque eius nam, accusantium labore adipisci atque! Officia ullam autem tempore quod porro eius eos! Repellat quas ducimus ea.
+        Eum obcaecati harum dolorem reprehenderit. Reiciendis nobis recusandae officiis necessitatibus sequi odit ea accusamus inventore vero consectetur, optio dolorum totam quae excepturi fugiat eos maiores! Nihil porro suscipit a minima.
+        Ducimus a minus quae praesentium adipisci corrupti optio nobis molestias soluta tenetur et quibusdam sapiente rerum repellat expedita, quisquam, tempora pariatur quia necessitatibus reiciendis itaque nam suscipit. Ducimus, possimus aut!
+        Et, quod fuga! Magnam laborum dicta adipisci odit doloremque natus corporis quibusdam eligendi, voluptate suscipit repudiandae, eum fugit, itaque deserunt. Nemo maiores nostrum sed, autem quo ullam dignissimos saepe consequuntur!
+        Quae cupiditate accusantium recusandae deserunt hic provident sint, quia natus ut beatae consequuntur, numquam itaque tenetur nesciunt eligendi. Repellendus odit molestiae animi soluta accusamus, aperiam eos similique illum veritatis commodi?
+        Praesentium molestias incidunt deserunt voluptatibus, quasi, laborum nisi iure sed voluptatum, expedita ipsam commodi culpa est vitae. Tenetur dignissimos in quaerat tempore ipsa, fuga deleniti error! Possimus debitis eaque accusamus!
+        Ab in magni eveniet, corrupti aspernatur suscipit quidem voluptatum adipisci sint voluptates! Maiores sequi similique ipsa odit alias aperiam nulla voluptatum molestiae, atque est pariatur suscipit ea culpa, sapiente ex!
+        Aliquam, exercitationem accusantium eum est rerum modi architecto in, sit assumenda quis explicabo soluta ut pariatur inventore nisi. Soluta voluptate tempora ratione labore aperiam minus eum harum hic sint impedit!
+        Magni repellendus, nulla omnis eveniet, itaque ad minima necessitatibus sequi illum iure consectetur odio ducimus amet quibusdam sunt repellat reprehenderit praesentium natus voluptates voluptatibus voluptate id! Nostrum aspernatur eveniet magnam.
+        Sit explicabo at molestiae aliquam excepturi eum eos, ab error minus modi perferendis rerum optio quos aperiam, et nisi distinctio velit officiis nostrum! Ex iure quam quos quo repellendus nesciunt!
+        Voluptatem blanditiis pariatur amet exercitationem ut, dolorum fuga iste. Non iusto tempora quis delectus doloremque, blanditiis, dolorum neque nihil fugiat veniam eligendi at cumque qui expedita deleniti quia doloribus illum.
+        Dignissimos molestias quaerat adipisci, alias doloremque provident quis eum neque ab culpa soluta vel voluptate exercitationem eos sed architecto repellat quidem saepe ducimus voluptatem sunt id? Necessitatibus non ea distinctio.
+        Ea alias pariatur fugiat ad nulla minima, illum non, placeat voluptatem necessitatibus iure aliquid cum eum fuga sed beatae quasi iste dolores architecto delectus. Ad libero quae tempora deserunt nihil?
+
         {% endblock main %}
     </main>
 
