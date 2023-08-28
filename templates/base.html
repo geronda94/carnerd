@@ -435,15 +435,52 @@
         </section>
 
         <section class="about" id="about">
-            <div class="container-fluid">
+            <div class="container-lg container-fluid">
                 <div class="row">
                     <h2 class="title_about section__title fs-1">About Us</h2>
                 </div>
-
+                <div class="row row__about">
+                    <div class="col-12 col-sm-5 about__img">
+                        <img class="about__avatar" src="{{url_for('static', filename='img/ukraine.jpeg')}}" alt="">
+                    </div>
+                    <div class="col-12 col-sm-7 about__text">
+                        <div class="about__description">We are a professional detailing and car washing team from Ukraine. We have been working in this field for more than 10 years and coped well with our tasks. But suddenly the war came and we ended up in Romania. Having left our homeland and found ourselves in a new world for us, we could not leave the cause to which we have been devoted for a long time. Therefore, it was decided to start all over again here. We have resumed our business and will be happy to provide decent service to the country that has received us so warmly.</div>
+                    </div>
+                </div>
             </div>
         </section>
     {% endblock main %}
     </main>
+    <footer>
+        {% block footer %}
+            <div class="container">
+                <div class="row row__footer">
+                    <div class="col-12 col-md-4 footer__logo"><a href="#" class="footer__nav-link">CARNERD</a></div>
+                    <div class="col-12 col-md-8 footer__nav">
+                        <nav class="footer__nav">
+                            <ul class="footer__ul-nav">
+                                <li>
+                                    <a href="#our_services" class="footer__nav-link">our services</a>
+                                </li>
+                                <li>
+                                    <a href="#location" class="footer__nav-link">Location</a>
+                                </li>
+                                <li>
+                                    <a href="#contacts" class="footer__nav-link">Contacts</a>
+                                </li>
+                                <li>
+                                    <a href="#about" class="footer__nav-link">About us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="all_rights">2023 © All rights reserved</div>
+                
+            </div>
+
+        {% endblock footer %}
+    </footer>
 
     
 

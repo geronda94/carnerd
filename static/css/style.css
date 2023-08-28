@@ -20,6 +20,7 @@
 
 html, body {
     color: var(--second-text);
+    background: #fff;
 }
 
 
@@ -808,5 +809,124 @@ li .lang__option:active{
 }
 /* /OUR CONTACTS  */
 /* ABOUT  */
+.row__about{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.about__img{
+    height: 250px;
+    
+}
+.about__avatar{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
+.about__text{
+    font-family: Frank Ruhl Libre;
+    height: 100%;
+}
+
+@media(max-width:940px){
+    .row__about{
+        margin-top: 20px;
+    }
+
+
+}
+
+@media(max-width:700px){
+    .about__img,
+    .about__text{
+        width: 100%;
+    }
+    .about__img{
+        margin-bottom: 20px;
+    }
+}
 /* /ABOUT  */
+
+
+
+/* FOOTER  */
+.row__footer{
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+footer{
+    background: #1f1F1f;
+    color: var(--main-light);
+}
+
+.footer__logo{
+    font-family: cinzel;
+    font-size: 30pt;
+    font-weight: 600;
+}
+
+
+.footer__ul-nav{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    list-style: none;
+    gap: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 9pt;
+}
+
+.footer__nav-link{
+    color: var(--main-light);
+
+}
+
+.footer__nav-link:hover,
+.footer__nav-link:active{
+    transition: 0.3s;
+    color: var(--accent-color);
+}
+
+
+
+
+.all_rights{
+    font-family:Inter;
+    text-align: center;
+    font-size: 10pt;
+    padding-bottom: 10px;
+}
+
+@media(max-width:767px){
+    .row__footer{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer__ul-nav {
+        justify-content: center;
+    }
+    .footer__logo{
+        font-size: 25pt;
+    }
+    .row__footer{
+        gap:7px;
+    }
+}
+@media(max-width:462px){
+        .footer__ul-nav{
+            font-size: 7pt;
+            letter-spacing: normal;
+        }
+
+        
+    }
+
+/* /FOOTER  */
