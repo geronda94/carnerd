@@ -515,6 +515,7 @@ li .lang__option:active{
     border: 1px solid var(--accent-color);
     padding: 3px 60px;
     font-weight: 600;
+    border-radius: 0;
 }
 
 .product__button:hover{
@@ -930,3 +931,36 @@ footer{
     }
 
 /* /FOOTER  */
+
+/* vanila calendar */
+
+.vanilla-calendar-day__btn_selected{
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color);
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.modal__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+}
+
+.phone__input,
+.phone__input:active,
+.phone__input:focus {
+
+}
+.select__date-modal{
+
+}
+/* /vanila calendar */
