@@ -11,140 +11,139 @@
 </head>
 <body>
 
-
+    
     <header>
-            {% block header %}
-            
-                {% block top_header %}
-                    
-                    <div class="container-fluid">
-                        <div class="row header__top-logo">
-                            <div class="col-md-3 col-6 order-md-1">
-                                <a class="icon__link" href="tel:+40 792 884 381">
-                                    <div class="social__icon"><i class="fa-solid fa-phone"></i></div> 
-                                    <div class="social__icon-text">079 288 43 81</div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 col-12 order-3 order-md-2">
-                                <div class="header__logo">
-                                    <img class="logo__img" src="{{url_for('static', filename='img/logo_auto2.svg')}}" alt="">
-                                    <div class="logo__text">CARNERD</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6 order-2 order-md-3 top_social-block">
-
-                                <a class="icon__link" href="https://wa.me/+40792884381" target="_blank">
-                                    <div class="social__icon" style="font-size: 23px;"><i class="fa-brands fa-whatsapp"></i></div> 
-                                </a>
-
-                                <a class="icon__link" href="#" target="_blank">
-                                    <div class="social__icon" ><i class="fa-brands fa-facebook"></i></div> 
-                                </a>
-
-                                <a class="icon__link" href="#" target="_blank">
-                                    <div class="social__icon" ><i class="fa-brands fa-instagram"></i></div> 
-                                </a>
-
+        {% block header %}             
+            {% block top_header %}
+                
+                <div class="container-fluid">
+                    <div class="row header__top-logo">
+                        <div class="col-md-3 col-6 order-md-1">
+                            <a class="icon__link" href="tel:+40 792 884 381">
+                                <div class="social__icon"><i class="fa-solid fa-phone"></i></div> 
+                                <div class="social__icon-text">079 288 43 81</div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-12 order-3 order-md-2">
+                            <div class="header__logo">
+                                <img class="logo__img" src="{{url_for('static', filename='img/logo_auto2.svg')}}" alt="">
+                                <div class="logo__text">CARNERD</div>
                             </div>
                         </div>
-                    </div>
-                    
-                {% endblock top_header %}                    
-                {% block slider_header %}
-                <div class="container-fluid p-0">
-                    <div class="row header__banner-top m-0">
-                        <div class="carousel__top p-0">
-                            <div id="carouselExampleAutoplaying" class="carousel slide slider__top" data-bs-ride="carousel">
-                                <!-- <div class="carousel-indicators">
-                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div> -->
-                                <div class="carousel-inner">
-                                  <div class="carousel-item slider__img active">
-                                    <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item slider__img">
-                                    <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item slider__img">
-                                    <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
-                                  </div>
-                                </div>
-                                
-                              </div>
+                        <div class="col-md-3 col-6 order-2 order-md-3 top_social-block">
+
+                            <a class="icon__link" href="https://wa.me/+40792884381" target="_blank">
+                                <div class="social__icon" style="font-size: 23px;"><i class="fa-brands fa-whatsapp"></i></div> 
+                            </a>
+
+                            <a class="icon__link" href="#" target="_blank">
+                                <div class="social__icon" ><i class="fa-brands fa-facebook"></i></div> 
+                            </a>
+
+                            <a class="icon__link" href="#" target="_blank">
+                                <div class="social__icon" ><i class="fa-brands fa-instagram"></i></div> 
+                            </a>
+
                         </div>
                     </div>
                 </div>
-                {% endblock slider_header %}
                 
-            
-        </header>
+            {% endblock top_header %}                    
+            {% block slider_header %}
+            <div class="container-fluid p-0">
+                <div class="row header__banner-top m-0">
+                    <div class="carousel__top p-0">
+                        <div id="carouselExampleAutoplaying" class="carousel slide slider__top" data-bs-ride="carousel">
+                            <!-- <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div> -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item slider__img active">
+                                <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item slider__img">
+                                <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item slider__img">
+                                <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            
+                            </div>
+                    </div>
+                </div>
+            </div>
+            {% endblock slider_header %}
+                
+        {% endblock header %}   
+    </header>
 
 
         {% block nav_header %}
-                <nav class="navbar navbar-expand-md bg-body-tertiary nav__body p-md-0 sticky-top" id="nav__body">
-                    <div class="container-fluid">
-                      <label class="navbar-brand nav__label-hidden" for="navigation__togler">Menu</label>
-                    <button id="navigation__togler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-md bg-body-tertiary nav__body p-md-0 sticky-top" id="nav__body">
+            <div class="container-fluid">
+                <label class="navbar-brand nav__label-hidden" for="navigation__togler">Menu</label>
+            <button id="navigation__togler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#our__services">Our services</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#location">Location</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#contacts">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#about">About us</a>
+                    </li>
+                    
+                    
+                </ul>
+                <div class="dropdown select__lang">
+                    <button class="btn btn-secondary dropdown-toggle select__lang-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="lang__option">
+                        <div class="lang__name">EN</div>
+                        <div class="lang__icon">
+                            <img src="{{url_for('static', filename='img/lang/en.png')}}" alt="">
+                        </div>
+                        </div>
                     </button>
-                     
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto  mb-lg-0">
-                          <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#our__services">Our services</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#location">Location</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Contacts</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                          </li>
-                          
-                          
-                        </ul>
-                        <div class="dropdown select__lang">
-                            <button class="btn btn-secondary dropdown-toggle select__lang-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <div class="lang__option">
-                                <div class="lang__name">EN</div>
-                                <div class="lang__icon">
-                                    <img src="{{url_for('static', filename='img/lang/en.png')}}" alt="">
-                                </div>
-                              </div>
-                            </button>
-                            <ul class="dropdown-menu lang_dropdown ">
-                              <li><a class="dropdown-item lang__option" href="#">
-                                <div class="lang__icon">
-                                    <img src="{{url_for('static', filename='img/lang/ro.png')}}" alt="">
-                                </div>
-                                <div class="lang__name">RO</div>                                
-                              </a></li>
-                              <li><a class="dropdown-item lang__option" href="#">
-                                <div class="lang__icon">
-                                    <img src="{{url_for('static', filename='img/lang/en.png')}}" alt="">
-                                </div>
-                                <div class="lang__name">EN</div>
-                                
-                              </a></li>
-                              <li><a class="dropdown-item lang__option" href="#">
-                                <div class="lang__icon">
-                                    <img src="{{url_for('static', filename='img/lang/ua.png')}}" alt="">
-                                </div>
-                                <div class="lang__name">УКР</div>
-                                
-                              </a></li>
-                            </ul>
-                          </div>
-
-                      </div>
+                    <ul class="dropdown-menu lang_dropdown ">
+                        <li><a class="dropdown-item lang__option" href="#">
+                        <div class="lang__icon">
+                            <img src="{{url_for('static', filename='img/lang/ro.png')}}" alt="">
+                        </div>
+                        <div class="lang__name">RO</div>                                
+                        </a></li>
+                        <li><a class="dropdown-item lang__option" href="#">
+                        <div class="lang__icon">
+                            <img src="{{url_for('static', filename='img/lang/en.png')}}" alt="">
+                        </div>
+                        <div class="lang__name">EN</div>
+                        
+                        </a></li>
+                        <li><a class="dropdown-item lang__option" href="#">
+                        <div class="lang__icon">
+                            <img src="{{url_for('static', filename='img/lang/ua.png')}}" alt="">
+                        </div>
+                        <div class="lang__name">УКР</div>
+                        
+                        </a></li>
+                    </ul>
                     </div>
-                  </nav>
-                {% endblock nav_header %}
-            {% endblock header %}
+
+                </div>
+            </div>
+            </nav>
+        {% endblock nav_header %}
+        
     
     <main>
         {% block main %}
@@ -380,6 +379,65 @@
             <div class="container-fluid">
                 <div class="row">
                     <h2 class="title__contacts section__title fs-1">Contacts</h2>
+                </div>
+                <div class="row contacts__row">
+                    <col-12 class="col-sm-6 contact__item contacts__social">
+                        <a href="tel:+77777777" target="_blank" class="social__link-contacts">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <div class="social__link-text">+40 79 288 43 81</div>
+                        </a>
+                        <a href="https://wa.me/+77777777" target="_blank" class="social__link-contacts">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div class="social__link-text">+40 79 288 43 81</div>
+                        </a>
+                        <a href="https://fb.com" target="_blank" class="social__link-contacts">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <div class="social__link-text">Facebook</div>
+                        </a>
+                        <a href="tel:+77777777" target="_blank" class="social__link-contacts">
+                            <i class="fa-brands fa-instagram"></i>
+                            <div class="social__link-text">Instagram</div>
+                        </a>
+                    </col-12>
+                    <col-12 class="col-sm-6 contact__item contacts__workhours">
+                        <h3 class="workhours__title">Working hours</h3>
+                        <div class="working__hours-line">
+                            <div class="working-day">Mon</div>
+                            <div class="working-time">8:00-20:00</div>
+                        </div>
+                        <div class="working__hours-line">
+                            <div class="working-day">Tue</div>
+                            <div class="working-time">8:00-20:00</div>
+                        </div>
+                        <div class="working__hours-line">
+                            <div class="working-day">Wed</div>
+                            <div class="working-time">8:00-20:00</div>
+                        </div>
+                        <div class="working__hours-line">
+                            <div class="working-day">Thu</div>
+                            <div class="working-time">8:00-20:00</div>
+                        </div>
+                        <div class="working__hours-line">
+                            <div class="working-day">Fri</div>
+                            <div class="working-time">8:00-20:00</div>
+                        </div>
+                        <div class="working__hours-line">
+                            <div class="working-day">Sat</div>
+                            <div class="working-time">8:00-20:00</div>
+                        </div>
+                        <div class="working__hours-line">
+                            <div class="working-day">Sun</div>
+                            <div class="working-time">Closed</div>
+                        </div>
+                    </col-12>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2 class="title_about section__title fs-1">About Us</h2>
                 </div>
 
             </div>
