@@ -16,7 +16,7 @@ def index():
 def register():
     if request.method == 'POST':
         service = request.form.get('service')
-        return service
+        return request.form
     else:
         return json.dump('response',200)
 
