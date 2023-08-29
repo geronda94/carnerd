@@ -950,9 +950,16 @@ footer{
 .modal__form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap:15px;
+
+}
+
+.modal__button{
+    justify-self: flex-end;
+    /* margin-top: 270px; */
+    margin-bottom: 20px;
 }
 
 .phone__input,
@@ -963,4 +970,88 @@ footer{
 .select__date-modal{
 
 }
-/* /vanila calendar */
+
+
+.vanilla-calendar-input-wrapper{
+    z-index: 9999;
+    justify-self: center;
+    align-self: center;
+}
+
+.modal-content {
+    height: 500px;
+    border-radius: 0 !important;
+    font-family: Inter;
+}
+
+.select__date-modal{
+    margin-top: 10px;
+}
+
+
+.modal__button{
+    font-family: cinzel;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 7px 15px;
+    transition: 0.3s;
+}
+
+.modal-content .form-control{
+    border-radius: 0;
+}
+
+.air-datepicker-global-container {
+    z-index: 9999;
+}
+.air-datepicker{
+    
+    margin: 0 auto;
+    border-radius: 0 !important;
+    width: 330px !important;
+}
+
+.phone__input{
+    width: 275px;
+}
+
+#calendar{
+    width: 275px !important;
+}
+
+.air-datepicker-cell.-selected-{
+    background-color: var(--accent-color) !important;
+}
+
+.air-datepicker-cell{
+    font-family:Myriad;
+    font-size: 13pt;
+}
+
+.air-datepicker-body--day-names{
+
+}
+.air-datepicker-body--day-name{
+    color: var(--accent-color) !important;
+    font-weight: 500;
+    padding: 8px 0 3px;
+    margin: 0;
+    font-family:Inter;
+}
+.air-datepicker-cell {
+    padding: 12px;
+}
+
+@media(min-width:580px){
+    .modal-content {
+        height: 600;
+    }
+
+
+}
+
+
+
+/* /vanila calendar
+
+

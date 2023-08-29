@@ -45,26 +45,35 @@ function getSundaysInRange(startDate, endDate) {
   nextMonthDay = String(nextMonthDay).padStart(2, '0');
 
   const nextMonth = `${nextMonthYear}-${nextMonthMonth}-${nextMonthDay}`;
-  
+  date = {min: formattedDate, max: nextMonth,}
 
 
   const options = {
-    date: {
-        min: formattedDate,
-        max: nextMonth,
+    date:date,
+    input: true,
+    actions: {
+      changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
+        if (dates[0]) {
+          HTMLInputElement.value = dates[0];
+          // if you want to hide the calendar after picking a date
+          calendar.HTMLElement.classList.add('vanilla-calendar_hidden');
+        } else {
+          HTMLInputElement.value = '';
+        }
+      },
     },
-   
-};
-
-
-
-
-
-
-
+  };
+  
+  
+  
 document.addEventListener('DOMContentLoaded', () => {
-  const calendar = new VanillaCalendar('#calendar', options);
+  const calendar = new VanillaCalendar('#calendar-input', options);
   calendar.init();
+
 });
 
-// console([getSundaysInRange(formattedDate, nextMonthDateObj)])
+
+
+
+
+
