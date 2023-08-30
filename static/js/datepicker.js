@@ -25,7 +25,7 @@ new AirDatepicker('#calendar', {
     isMobile: true,
     autoClose: true,
     input: true,
-    weekends: [0],
+    weekends: ['Sunday'],
     minDate: dateToUse,
     // position: 'right top',
     // range: true,

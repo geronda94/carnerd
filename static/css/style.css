@@ -165,7 +165,9 @@ a{
 .select__lang{
     min-width: 8rem !important;
 }
-
+.lang__name{
+    text-transform: uppercase;
+}
 
 .lang_dropdown[data-bs-popper] {
     position: absolute;
@@ -247,6 +249,12 @@ li .lang__option:active{
 }
 
 @media (max-width:767px){
+    
+    .select__lang,
+    .lang_dropdown[data-bs-popper]{
+        min-width: 5rem !important;
+    }
+    
     .header__logo{
         margin-top: 15px;
     }
@@ -339,6 +347,7 @@ li .lang__option:active{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
 .advantages__title{
@@ -979,7 +988,7 @@ footer{
 }
 
 .modal-content {
-    height: 500px;
+    height: 550px;
     border-radius: 0 !important;
     font-family: Inter;
 }
