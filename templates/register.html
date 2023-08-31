@@ -22,7 +22,7 @@
         <div class="container-fluid booking__title-container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="title__booking section__title fs-4">Booking for {{service.service_name}}</h2>
+                    <h2 class="title__booking section__title fs-4">Booking for service: {{service.service_name}}</h2>
                 </div>
             </div>
         </div>
@@ -30,14 +30,39 @@
             <div class="row">
                 <div class="col-12">
                     <form action=""  class="booking__form" method="post">
-
-
+                        {% if phone_failed %}
+                        <div class="mb-3 booking__input">
+                            <label for="exampleFormControlInput1" class="form-label label__wrong">Phone is wrong, please enter again</label>
+                            <input type="tel" class="form-control" class="" id="exampleFormControlInput1" placeholder="You phone">
+                          </div>                            
+                        {% endif %}
+                            
                         
+                        <select class="form-select booking__input" aria-label="Default select example">
+                            <option selected>Select time for service</option>
+                            {% for i in time_list %}
+                            <option value="{{i}}">{{i}}</option> 
+                            {% endfor %}                         
+                        </select>
+
+                        <select class="form-select booking__input" aria-label="Default select example">
+                            <option selected>Select service option</option>
+                            {% for i in service.service_types %}
+                            <option value="{{i[0]}}-{{i[1] | int}}">{{i[0]}} - {{i[1] | int}} RON</option> 
+                            {% endfor %}                         
+                        </select>
+
+
+
                         <input type="hidden" name="booking-date" value="{{booking_date}}">
                         <input type="hidden" name="phone" value="{{phone}}">
                         {% for i in service.items() %}
                             <input type="hidden" name="{{i[0]}}" value="{{i[1]}}">
                         {% endfor %}
+                        <div class="order__product">
+                            <button type="submit" class="product__button modal_button">Confirm</button> 
+                        </div>
+                            
                     </form>             
 
 

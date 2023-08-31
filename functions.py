@@ -19,7 +19,7 @@ def booking_time_list():
         current_time += timedelta(minutes=interval_minutes)
 
     # Вывод списка временных интервалов
-    print(time_intervals)
+    return time_intervals
 
 
 

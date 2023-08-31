@@ -29,22 +29,25 @@ def index():
 @app.route('/register', methods=['POST'])
 def register():
     lang = session.get('lang')
+
     if request.method == 'POST':
         service_link = request.form.get('service')
         phone = number_validator(request.form.get('phone'))
         booking_date = request.form.get('booking-date')
         #Получаем еще раз услугу из бд
-        service_dict = services.get_service(service_link=service_link)[0]
+        service_dict = services.get_service(service_link=service_link, lang=lang)[0]
         service_name = service_dict.get('service_name')
         if phone:
             #Заносим полученные от пользователя данные в бд start_client если этот номер у нас в первый раз попался
             booking_id = services.start_clients(service_link=service_link, sid=str(session.get('uid')), service_name=service_name ,phone=phone, booking_date=booking_date)
-            #Формируем список времени для записи
 
-            return render_template('register.html', title=title.get(lang), service=service_dict,
-                                   booking_date=booking_date, phone=phone, order_time = booking_time_list())
-
-
+            phone_failed=False
+            
+        else:
+            phone_failed=True
+            
+        return render_template('register.html', title=title.get(lang), service=service_dict,
+                                   booking_date=booking_date, phone=phone, time_list=booking_time_list(), phone_failed=phone_failed)
 
 
 @app.route('/lang/<lang>')
