@@ -403,7 +403,7 @@ li .lang__option:active{
 /* SECTION SERVICES  */
 .services{
     overflow: hidden;
-    padding-bottom: 20px;
+    
 }
 
 .title__services{
@@ -416,11 +416,13 @@ li .lang__option:active{
 
 .carousel__control-labels{
     margin-top: 0;
+    margin-bottom: 30px;
     font-family:Myriad;
     color: var(--accent-color);
     font-size: 14pt;
     letter-spacing: 3px;
     display: flex;
+    flex-wrap: wrap;
     gap:10px;
     padding-bottom: 10px;
 }
@@ -450,8 +452,8 @@ li .lang__option:active{
 .product__card{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:1fr 8fr 1.5fr;
-    height: 460px ;
+    grid-template-rows:1fr 8fr 3fr;
+    height: 530px ;
 }
 
 .product__descriprion{
@@ -462,7 +464,7 @@ li .lang__option:active{
 
 .product__title{
     font-family: cinzel;
-    font-size: 17pt;
+    font-size: 20pt;
     text-decoration: underline;
     font-weight: 600;
     text-align: center;
@@ -504,9 +506,11 @@ li .lang__option:active{
     grid-column: span 2;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: cinzel;
     font-size: 16pt;
-    margin-top: auto;
+    margin-top: 30px;
+    
 
 }
 
@@ -585,7 +589,7 @@ li .lang__option:active{
     }
 
     .product__card{
-        height: 435px;
+        height: 500px;
     }
 }
 
@@ -1059,8 +1063,20 @@ footer{
 
 }
 
-
-
 /* /vanila calendar
 
 
+/* ORDER SECTION */
+.booking{
+    height: 600px;
+    width: 100%;
+    background: #fff;
+    color: var(--main-dark);
+}
+
+.booking__title-container{
+    border-top: 3px solid var(--accent-color);
+
+}
+
+/* /ORDER SECTION */

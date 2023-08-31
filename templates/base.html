@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='airdatepicker/air-datepicker.css')}}">
-    <title>Carnerd - Spălătorie auto în București</title>
-</head>
+    {% block includes %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='airdatepicker/air-datepicker.css')}}">
+        <title>{{title}}</title>
+    </head>
+    {% endblock includes %}
+
 <body>
 
     
@@ -82,80 +85,82 @@
     </header>
 
 
-        {% block nav_header %}
-        <nav class="navbar navbar-expand-md bg-body-tertiary nav__body p-md-0 sticky-top" id="nav__body">
-            <div class="container-fluid">
-                <label class="navbar-brand nav__label-hidden" for="navigation__togler">Menu</label>
-            <button id="navigation__togler" class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="dropdown select__lang d-md-none">
-                <button class="btn btn-secondary dropdown-toggle select__lang-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="lang__option">
-                    <div class="lang__name">{{lang}}</div>
-                    <div class="lang__icon">
-                        <img src="{{url_for('static', filename='img/lang/' ~ lang ~ '.png')}}" alt="">
-                    </div>
-                    </div>
-                </button>
-                <ul class="dropdown-menu lang_dropdown ">
-                    {% for i in languages %}
-                        <li><a class="dropdown-item lang__option" href="{{url_for('select_lang', lang=i)}}">
-                        <div class="lang__icon">
-                            <img src="{{ url_for('static', filename='img/lang/' ~ i ~ '.png') }}" alt="">
-                        </div>
-                        <div class="lang__name">{{i}}</div>                                
-                        </a></li>
-                    {% endfor %}                            
-                </ul>
-            </div>
-                
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto  mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#our__services">Our services</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#location">Location</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#contacts">Contacts</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#about">About us</a>
-                        </li>
-                        
-                        
-                    </ul>
-                    <div class="dropdown select__lang d-none d-md-block">
-                        <button class="btn btn-secondary dropdown-toggle select__lang-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div class="lang__option">
-                            <div class="lang__name">{{lang}}</div>
-                            <div class="lang__icon">
-                                <img src="{{url_for('static', filename='img/lang/' ~ lang ~ '.png')}}" alt="">
-                            </div>
-                            </div>
-                        </button>
-                        <ul class="dropdown-menu lang_dropdown ">
-                            {% for i in languages %}
-                                <li><a class="dropdown-item lang__option" href="{{url_for('select_lang', lang=i)}}">
-                                <div class="lang__icon">
-                                    <img src="{{ url_for('static', filename='img/lang/' ~ i ~ '.png') }}" alt="">
-                                </div>
-                                <div class="lang__name">{{i}}</div>                                
-                                </a></li>
-                            {% endfor %}                            
-                        </ul>
-                    </div>
-
+    {% block nav_header %}
+    <nav class="navbar navbar-expand-md bg-body-tertiary nav__body p-md-0 sticky-top" id="nav__body">
+        <div class="container-fluid">
+            <label class="navbar-brand nav__label-hidden" for="navigation__togler">Menu</label>
+        <button id="navigation__togler" class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="dropdown select__lang d-md-none">
+            <button class="btn btn-secondary dropdown-toggle select__lang-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="lang__option">
+                <div class="lang__name">{{lang}}</div>
+                <div class="lang__icon">
+                    <img src="{{url_for('static', filename='img/lang/' ~ lang ~ '.png')}}" alt="">
                 </div>
+                </div>
+            </button>
+            <ul class="dropdown-menu lang_dropdown ">
+                {% for i in languages %}
+                    <li><a class="dropdown-item lang__option" href="{{url_for('select_lang', lang=i)}}">
+                    <div class="lang__icon">
+                        <img src="{{ url_for('static', filename='img/lang/' ~ i ~ '.png') }}" alt="">
+                    </div>
+                    <div class="lang__name">{{i}}</div>                                
+                    </a></li>
+                {% endfor %}                            
+            </ul>
+        </div>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#our__services">Our services</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#location">Location</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#contacts">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#about">About us</a>
+                    </li>
+                    
+                    
+                </ul>
+                <div class="dropdown select__lang d-none d-md-block">
+                    <button class="btn btn-secondary dropdown-toggle select__lang-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="lang__option">
+                        <div class="lang__name">{{lang}}</div>
+                        <div class="lang__icon">
+                            <img src="{{url_for('static', filename='img/lang/' ~ lang ~ '.png')}}" alt="">
+                        </div>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu lang_dropdown ">
+                        {% for i in languages %}
+                            <li><a class="dropdown-item lang__option" href="{{url_for('select_lang', lang=i)}}">
+                            <div class="lang__icon">
+                                <img src="{{ url_for('static', filename='img/lang/' ~ i ~ '.png') }}" alt="">
+                            </div>
+                            <div class="lang__name">{{i}}</div>                                
+                            </a></li>
+                        {% endfor %}                            
+                    </ul>
+                </div>
+
             </div>
-            </nav>
-        {% endblock nav_header %}
+        </div>
+    </nav>
+    {% endblock nav_header %}
         
     
+    
+    {% block main %}
     <main>
-        {% block main %}
+        {% block advantages %}
         <section class="advantages">
             <div class="container-fluid">
                 <div class="row">
@@ -199,9 +204,11 @@
                     </div>                   
                 </div>
             </div>
-        </section>
-
-        <section class="services" id="our__services">
+        </section>    
+        {% endblock advantages %}
+        
+        {% block services %}
+         <section class="services" id="our__services">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -212,151 +219,53 @@
                     <div id="carouselExampleIndicators" data-bs-animation="none" class="carousel carousel-fade carousel__services">
                         
                         <div class="carousel__control-labels">
-                        {% for i in num_services %}
-                            <label class="service__label" for="slide-{{i}}">{{i+1}}</label>
+                        {% for i in services %}
+                            <label class="service__label" for="slide-{{i.order_num}}">{{i.service_name}}</label>
                         {% endfor %}
+                            
                         </div>
 
                         <div class="carousel-indicators services__nav">
-                            {% for i in num_services %}
-                            <button id="slide-{{i}}" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{i}}" class="services__button {% if i == 1 %}active{% endif %}"  aria-label="Service {i}"></button>
+                            {% for i in services %}
+                            <button id="slide-{{i.order_num}}" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{i.order_num - 1}}" class="services__button {% if i.order_num == 2 %}active{% endif %}"  aria-label="Service {i}"></button>
                             <!-- <button id="slide-0" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="services__button"  aria-label="Service 1"></button> -->
                             {% endfor %}
                         </div>
                         <div class="carousel-inner">
-
-                            <div class="carousel-item">
+                            {% for i in services %}
+                            <div class="carousel-item {% if i.order_num == 2 %}active{% endif %}">
                                 <div class="product__card">
-                                    <h1 class="product__title">Body wash</h1>
+                                    <h1 class="product__title">{{i.service_name}}</h1>
                                     <div class="product__descriprion">
+                                        {% if i.service_li %}
                                         <ul class="product__options">
-                                            <li> Thorough body wash</li>
-                                            <li> Car interior cleaning</li>
-                                            <li> Interior refresh</li>
-                                        </ul>
-                                        <p class="product__more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, optio enim. Voluptate sunt, natus voluptatum consequuntur, impedit nesciunt ipsum ipsam doloribus iure ut neque explicabo. Et atque magnam voluptates delectus!
-                                            Natus in incidunt dolores </p>
+                                            {% for li in i.service_li %}
+                                            <li>{{li}}</li> 
+                                            {% endfor %}
+                                        </ul> 
+                                        {% endif %}
+                                        
+                                        <p class="product__more">{{i.service_description}}  {{i.avatar_link}}</p>
                                     </div>
                                     <div class="product__img">
-                                        <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
+                                        <img src="{{url_for('static', filename='img/catalog/')}}{{i.avatar_link}}" alt="">
                                     </div>
                                     <div class="order__product">
-                                        <div class="product__price">100 RON</div>
-                                        <button type="button" class=" product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-param="service-1">
-                                            register
-                                        </button>
+                                        <div class="product__price">{{i.service_types[0][1] | int}} RON</div>
+                                        <button type="button" class=" product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                                        data-param="{{i.service_link}}">
+                                        register    
+                                    </button>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="carousel-item active">
-                                <div class="product__card">
-                                    <h1 class="product__title">Complex wash</h1>
-                                    <div class="product__descriprion">
-                                        <ul class="product__options">
-                                            <li> Thorough body wash</li>
-                                            <li> Car interior cleaning</li>
-                                            <li> Interior refresh</li>
-                                        </ul>
-                                        <p class="product__more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, optio enim. Voluptate sunt, natus voluptatum consequuntur, impedit nesciunt ipsum ipsam doloribus iure ut neque explicabo. Et atque magnam voluptates delectus!
-                                            Natus in incidunt dolores </p>
-                                    </div>
-                                    <div class="product__img">
-                                        <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
-                                    </div>
-                                    <div class="order__product">
-                                        <div class="order__product">
-                                            <div class="product__price">100 RON</div>
-                                            <button type="button" class=" product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-param="service-2">
-                                                register
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="carousel-item">
-                                <div class="product__card">
-                                    <h1 class="product__title">Premium wash</h1>
-                                    <div class="product__descriprion">
-                                        <ul class="product__options">
-                                            <li> Thorough body wash</li>
-                                            <li> Car interior cleaning</li>
-                                            <li> Interior refresh</li>
-                                        </ul>
-                                        <p class="product__more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, optio enim. Voluptate sunt, natus voluptatum consequuntur, impedit nesciunt ipsum ipsam doloribus iure ut neque explicabo. Et atque magnam voluptates delectus!
-                                            Natus in incidunt dolores </p>
-                                    </div>
-                                    <div class="product__img">
-                                        <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
-                                    </div>
-                                    <div class="order__product">
-                                        <div class="product__price">100 RON</div>
-                                        <button type="button" class=" product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-param="service-3">
-                                            register
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="product__card">
-                                    <h1 class="product__title">Interior cleaning</h1>
-                                    <div class="product__descriprion">
-                                        <ul class="product__options">
-                                            <li> Thorough body wash</li>
-                                            <li> Car interior cleaning</li>
-                                            <li> Interior refresh</li>
-                                        </ul>
-                                        <p class="product__more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, optio enim. Voluptate sunt, natus voluptatum consequuntur, impedit nesciunt ipsum ipsam doloribus iure ut neque explicabo. Et atque magnam voluptates delectus!
-                                            Natus in incidunt dolores </p>
-                                    </div>
-                                    <div class="product__img">
-                                        <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
-                                    </div>
-                                    <div class="order__product">
-                                        <div class="product__price">100 RON</div>
-                                        <button type="button" class=" product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-param="service-4">
-                                            register
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="product__card">
-                                    <h1 class="product__title">Body polishing</h1>
-                                    <div class="product__descriprion">
-                                        <ul class="product__options">
-                                            <li> Thorough body wash</li>
-                                            <li> Car interior cleaning</li>
-                                            <li> Interior refresh</li>
-                                        </ul>
-                                        <p class="product__more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, optio enim. Voluptate sunt, natus voluptatum consequuntur, impedit nesciunt ipsum ipsam doloribus iure ut neque explicabo. Et atque magnam voluptates delectus!
-                                            Natus in incidunt dolores </p>
-                                    </div>
-                                    <div class="product__img">
-                                        <img src="{{url_for('static', filename='img/catalog/service1.jpg')}}" alt="">
-                                    </div>
-                                    <!-- Button trigger modal -->
-                                    <div class="order__product">
-                                        <div class="product__price">100 RON</div>
-                                        <button type="button" class=" product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-param="service-5">
-                                            register
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-    
-                          
-                          
-
+                            {% endfor %}
                           
                         </div>
                         <div class="carousel__control-labels mobile__control-labels">
-                            {% for i in num_services %}
-                            <label class="service__label" for="slide-{{i}}">{{i+1}}</label>
+                            {% for i in services %}
+                            <label class="service__label" for="slide-{{i.order_num}}">{{i.service_name}}</label>
+
                             {% endfor %}
                         </div>
                         <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -374,7 +283,10 @@
                 
               </div>
             </div>
-        </section>
+        </section>    
+        {% endblock services %}
+       
+        {% block location %}
         <section class="location" id="location">
             <div class="container-fluid">
                 <div class="row">
@@ -392,7 +304,10 @@
                     <div class="col-11 br__line"></div>
                 </div>
             </div>
-        </section>
+        </section>    
+        {% endblock location %}
+        
+        {% block contacts %}
         <section class="contacts" id="contacts">
             <div class="container-fluid">
                 <div class="row">
@@ -450,8 +365,10 @@
                     </col-12>
                 </div>
             </div>
-        </section>
-
+        </section>    
+        {% endblock contacts %}
+        
+        {% block about %}
         <section class="about" id="about">
             <div class="container-lg container-fluid">
                 <div class="row">
@@ -466,96 +383,94 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>    
+        {% endblock about %}
+    </main>    
     {% endblock main %}
-    </main>
+    
 
 
-
-
-<div class="modal__windows">
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Register to service</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-                
-                <form action="{{url_for('register')}}" class="modal__form" method="post">
-                    <h3 class="select__date-modal" id="modal-title">Select date</h3>           
-                    <p class="modal-title"></p>
-
+    {% block modal %}
+    <div class="modal__windows">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Register to service</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
                     
-                    <input id="calendar" type="text" name="booking-date" class="form-control" placeholder="Select date" autocomplete="off">
+                    <form action="{{url_for('register')}}" class="modal__form" method="post">
+                        <h3 class="select__date-modal" id="modal-title">Select date</h3>           
+                        <p class="modal-title"></p>
+
                         
-                    <div class="form-floating mb-3">             
+                        <input id="calendar" type="text" name="booking-date" class="form-control" placeholder="Select date" autocomplete="off">
+                            
+                        <div class="form-floating mb-3">             
+                            
+                            <input type="tel" class="form-control phone__input" name="phone" id="floatingInput" placeholder="0XXX XXX XXX">
+                            <label for="floatingInput">Enter Your phone</label>
+                        </div>
                         
-                        <input type="tel" class="form-control phone__input" name="phone" id="floatingInput" placeholder="0XXX XXX XXX">
-                        <label for="floatingInput">Enter Your phone</label>
-                    </div>
-                    
-                    <input type="hidden" id="booking-date" name="booking-date">
-                    <input type="hidden" name="service" id="service_input">
-                    <button type="submit" class="product__button modal__button">Next step</button>
-                </form>
+                        
+                        <input type="hidden" name="service" id="service_input">
+                        <button type="submit" class="product__button modal__button">Next step</button>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
             </div>
-            <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
         </div>
     </div>
-</div>
-
+    {% endblock modal %}
 
     
-    <footer>
-        {% block footer %}
-            <div class="container">
-                <div class="row row__footer">
-                    <div class="col-12 col-md-4 footer__logo"><a href="#" class="footer__nav-link">CARNERD</a></div>
-                    <div class="col-12 col-md-8 footer__nav">
-                        <nav class="footer__nav">
-                            <ul class="footer__ul-nav">
-                                <li>
-                                    <a href="#our__services" class="footer__nav-link">our services</a>
-                                </li>
-                                <li>
-                                    <a href="#location" class="footer__nav-link">Location</a>
-                                </li>
-                                <li>
-                                    <a href="#contacts" class="footer__nav-link">Contacts</a>
-                                </li>
-                                <li>
-                                    <a href="#about" class="footer__nav-link">About us</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+    {% block footer %}
+    <footer>        
+        <div class="container">
+            <div class="row row__footer">
+                <div class="col-12 col-md-4 footer__logo"><a href="#" class="footer__nav-link">CARNERD</a></div>
+                {% block footer_nav %}
+                <div class="col-12 col-md-8 footer__nav">                        
+                    <nav class="footer__nav">
+                        <ul class="footer__ul-nav">
+                            <li>
+                                <a href="#our__services" class="footer__nav-link">our services</a>
+                            </li>
+                            <li>
+                                <a href="#location" class="footer__nav-link">Location</a>
+                            </li>
+                            <li>
+                                <a href="#contacts" class="footer__nav-link">Contacts</a>
+                            </li>
+                            <li>
+                                <a href="#about" class="footer__nav-link">About us</a>
+                            </li>
+                        </ul>
+                    </nav>     
                 </div>
-                <div class="all_rights">2023 © All rights reserved</div>
-                
+                {% endblock footer_nav %}
             </div>
-
-        {% endblock footer %}
-        
-    
+            <div class="all_rights">2023 © All rights reserved</div>
+            
+        </div>    
     </footer>
-
-    
-
-
-
-
-
-
-
-
+    {% endblock footer %}
     
 
     
+
+
+
+
+
+
+
+    {% block scripts %}
     <!-- Plugin CSS calendar -->
     <!-- <link href="{{url_for('static', filename='calendar/vanilla-calendar.min.css')}}" rel="stylesheet">
     <link href="{{url_for('static', filename='calendar/themes/light.min.css')}}" rel="stylesheet">
@@ -567,25 +482,15 @@
     <script src="{{url_for('static', filename='airdatepicker/air-datepicker.js')}}"></script>
     <script src="{{url_for('static', filename='js/datepicker.js')}}"></script>
 
-    <script>
-        // Получите ссылки меню
-        const menuLinks = document.querySelectorAll('.navbar-nav a');
-    
-        // Добавьте обработчик события для каждой ссылки
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Закройте меню (если оно открыто)
-                const mobileMenu = document.querySelector('.navbar-collapse');
-                if (mobileMenu.classList.contains('show')) {
-                    mobileMenu.classList.remove('show');
-                }
-            });
-        });
-    </script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script> 
+    {% endblock scripts %}
+
+    
+    
 
 </body>
 </html>

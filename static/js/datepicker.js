@@ -9,8 +9,25 @@ $(document).ready(function () {
         modal.find('#service_input').val(param); 
 });
 });
-  
-  
+
+
+
+
+
+// Получите ссылки меню
+const menuLinks = document.querySelectorAll('.navbar-nav a');
+
+// Добавьте обработчик события для каждой ссылки
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Закройте меню (если оно открыто)
+        const mobileMenu = document.querySelector('.navbar-collapse');
+        if (mobileMenu.classList.contains('show')) {
+            mobileMenu.classList.remove('show');
+        }
+    });
+});
+
   
   
 const now = new Date();

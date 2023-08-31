@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+{% block includes %}
+    {{super()}}
+{% endblock includes %}
+{% block header %}
+    {% block top_header %}
+        {{super()}}
+    {% endblock top_header %}
+{% endblock header %}
+{% block nav_header %}
+    
+{% endblock nav_header %}
+
+
+
+
+{% block main %}
+    {% block booking %}
+    <section class="booking" id="booking">
+        <div class="container-fluid booking__title-container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="title__booking section__title fs-4">Booking for {{service.service_name}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action=""  class="booking__form" method="post">
+
+
+                        
+                        <input type="hidden" name="booking-date" value="{{booking_date}}">
+                        <input type="hidden" name="phone" value="{{phone}}">
+                        {% for i in service.items() %}
+                            <input type="hidden" name="{{i[0]}}" value="{{i[1]}}">
+                        {% endfor %}
+                    </form>             
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>    
+    {% endblock booking %}
+
+    {% block location %}
+       
+    {% endblock location %}
+    {% block contacts %}
+       
+    {% endblock contacts %}
+    {% block about %}
+        
+    {% endblock about %}
+{% endblock main %}
+
+{% block footer %}
+    {{super()}}
+
+    {% block footer_nav %}
+    
+    {% endblock footer_nav %}
+
+{% endblock footer %}
