@@ -433,7 +433,10 @@
     <footer>        
         <div class="container">
             <div class="row row__footer">
-                <div class="col-12 col-md-4 footer__logo"><a href="#" class="footer__nav-link">CARNERD</a></div>
+                {% block footer__logo %}
+                    <div class="col-12 col-md-4 footer__logo"><a href="#" class="footer__nav-link">CARNERD</a></div>
+                {% endblock footer__logo %}
+                
                 {% block footer_nav %}
                 <div class="col-12 col-md-8 footer__nav">                        
                     <nav class="footer__nav">

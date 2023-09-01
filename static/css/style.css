@@ -1080,7 +1080,7 @@ footer{
 }
 
 .booking__form{
-    width: 60%;
+    
     height: 100%;
     margin:20px auto;
     display: flex;
@@ -1102,5 +1102,22 @@ footer{
     font-size: 10pt;
     color: #a01f1f;
 }
+
+@media(max-width:480px){
+    .booking__input{
+        width: 280px !important;
+        
+    }
+    
+    .label__wrong{
+        width: 280px;
+    }
+
+    .title__booking{
+        font-size: 13pt !important;
+    }
+
+}
+
 
 /* /ORDER SECTION */

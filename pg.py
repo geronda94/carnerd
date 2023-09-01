@@ -265,4 +265,4 @@ request_db = PgRequest(connect)
 
 services = Services(request_db)
 
-# services.check_time('')
+# print(services.get_service('body-polishing', lang='ua')[0])

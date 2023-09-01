@@ -28,13 +28,16 @@ def booking_time_list():
 def number_validator(number: str):
     new_number = ''
     for i in range(len(number)):
-        if (number[0] =='+' and i == str(0)) or number[i].isdigit():
+        if (number[0] == '+') or number[i].isdigit():
             new_number += number[i]
 
         else:
             return False
-    if len(new_number)==9 and new_number[0] != str(0):
+    if 10 >= len(new_number) >= 9 and new_number[0] != str(0):
         new_number = '0'+new_number
+
+    if len(new_number) > 10 and new_number[0] != '+':
+        return False
         
     return False if 15 < len(new_number) or len(new_number) < 10 else new_number
 

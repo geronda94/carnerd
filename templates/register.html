@@ -29,11 +29,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action=""  class="booking__form" method="post">
+                    <form action="{{url_for('register')}}"  class="booking__form" method="post">
                         {% if phone_failed %}
                         <div class="mb-3 booking__input">
                             <label for="exampleFormControlInput1" class="form-label label__wrong">Phone is wrong, please enter again</label>
-                            <input type="tel" class="form-control" class="" id="exampleFormControlInput1" placeholder="You phone">
+                            <input type="tel" class="form-control" name="phone" class="" id="exampleFormControlInput1" placeholder="You phone">
                           </div>                            
                         {% endif %}
                             
@@ -55,8 +55,11 @@
 
 
                         <input type="hidden" name="booking-date" value="{{booking_date}}">
-                        <input type="hidden" name="phone" value="{{phone}}">
-                        {% for i in service.items() %}
+                        {% if not phone_failed %}
+                            <input type="hidden" name="phone" value="{{phone}}">
+                        {% endif %}
+                        
+                            {% for i in service.items() %}
                             <input type="hidden" name="{{i[0]}}" value="{{i[1]}}">
                         {% endfor %}
                         <div class="order__product">
@@ -86,7 +89,9 @@
 
 {% block footer %}
     {{super()}}
-
+    {% block footer__logo %}
+        <div class="col-12 col-md-4 footer__logo"><a href="{{url_for('index')}}" class="footer__nav-link">CARNERD</a></div>
+    {% endblock footer__logo %}
     {% block footer_nav %}
     
     {% endblock footer_nav %}
