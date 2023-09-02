@@ -353,6 +353,9 @@ li .lang__option:active{
     .headernav-scroll{
         background-color: #fff !important;
     }
+    .slider__desc{
+        line-height: 13pt;
+    }
 
 }
 
