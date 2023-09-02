@@ -14,6 +14,7 @@
     --main-light: #d3d3d3;
     --accent-color:#456faf;
     --second-text: #5a5a5a;
+    --error: #a01f1f;
 }
 
 
@@ -529,6 +530,7 @@ li .lang__option:active{
     padding: 3px 60px;
     font-weight: 600;
     border-radius: 0;
+    text-transform: uppercase;
 }
 
 .product__button:hover{
@@ -1063,6 +1065,12 @@ footer{
 
 }
 
+.air-datepicker-body--day-name.-weekend- {
+    /* Ваши стили здесь */
+    color: var(--error) !important; /* Пример: изменить цвет текста на красный */
+    /* Другие стили, которые вы хотите применить */
+}
+
 /* /vanila calendar
 
 
@@ -1121,3 +1129,36 @@ footer{
 
 
 /* /ORDER SECTION */
+/* FLASH */
+.flash__success{
+    color: #1e9833;
+}
+.flash__error{
+    color: var(--error);
+}
+
+.flash__button,
+.flash__button:hover,
+.flash__button:active{
+    margin-bottom: 0;
+    border:1px solid var(--accent-color);
+}
+
+.flash__content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 14pt;
+    text-align: center;
+    padding: 0 10%;
+    
+}
+
+.flash__img{
+    font-size: 100pt;
+}
+/* /FLASH */
+

@@ -42,26 +42,22 @@ new AirDatepicker('#calendar', {
     isMobile: true,
     autoClose: true,
     input: true,
-    weekends: ['Sunday'],
     minDate: dateToUse,
-    // position: 'right top',
-    // range: true,
-    // multipleDatesSeparator: ' - '
-    // timepicker: true,
-    // Handle render process
-    /*onRenderCell({date, cellType}) {
-        let dates = [1, 5, 7, 10, 15, 20, 25],
-        emoji = ['💕', '😃', '🍙', '🍣', '🍻', '🎉', '🥁'],
-        isDay = cellType === 'day',
-        _date = date.getDate(),
-        shouldChangeContent = isDay && dates.includes(_date),
-        randomEmoji = emoji[Math.floor(Math.random() * emoji.length)];
-
-        return {
-            html: shouldChangeContent ? randomEmoji : false,
-            classes: shouldChangeContent ? '-emoji-cell-' : false
+    weekends: [0,6],
+    onRenderCell({ date, cellType }) {
+        // Если текущая ячейка - день (не месяц и не год)
+        if (cellType === 'day') {
+            // Если это воскресенье (0 - воскресенье), делаем его некликабельным
+            if (date.getDay() === 0) {
+                return {
+                    disabled: true,
+                    classes: '-disabled-'
+                };
+            }
         }
-    }*/
+        // В остальных случаях оставляем ячейку как есть
+        return {};
+    },
     locale: {
         days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -72,7 +68,9 @@ new AirDatepicker('#calendar', {
         timeFormat: 'hh:mm aa',
         firstDay: 1,
     },
-      
-
+    
 });
+
+
+
 

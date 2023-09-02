@@ -22,7 +22,7 @@
         <div class="container-fluid booking__title-container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="title__booking section__title fs-4">Booking for service: {{service.service_name}}</h2>
+                    <h2 class="title__booking section__title fs-4">{{index_lang.booking_for_service}}: {{service.service_name}}</h2>
                 </div>
             </div>
         </div>
@@ -32,38 +32,37 @@
                     <form action="{{url_for('register')}}"  class="booking__form" method="post">
                         {% if phone_failed %}
                         <div class="mb-3 booking__input">
-                            <label for="exampleFormControlInput1" class="form-label label__wrong">Phone is wrong, please enter again</label>
-                            <input type="tel" class="form-control" name="phone" class="" id="exampleFormControlInput1" placeholder="You phone">
+                            <label for="exampleFormControlInput1" class="form-label label__wrong">{{index_lang.phone_is_wrong}}</label>
+                            <input type="tel" class="form-control" name="phone" class="" id="exampleFormControlInput1" placeholder="{{index_lang.your_phone}}">
                           </div>                            
                         {% endif %}
                             
                         
-                        <select class="form-select booking__input" aria-label="Default select example">
-                            <option selected>Select time for service</option>
+                        <select class="form-select booking__input" name="booking_time" aria-label="Default select example">
+                            <option selected>{{index_lang.select_time_for_service}}</option>
                             {% for i in time_list %}
                             <option value="{{i}}">{{i}}</option> 
                             {% endfor %}                         
                         </select>
 
-                        <select class="form-select booking__input" aria-label="Default select example">
-                            <option selected>Select service option</option>
+                        <select class="form-select booking__input" name="car_type" aria-label="Default select example">
+                            <option selected>{{index_lang.select_service_option}}</option>
                             {% for i in service.service_types %}
-                            <option value="{{i[0]}}-{{i[1] | int}}">{{i[0]}} - {{i[1] | int}} RON</option> 
+                            <option value="{{i[0]}} ~ {{i[1] | int}}">{{i[0]}} ~ {{i[1] | int}} RON</option> 
                             {% endfor %}                         
                         </select>
 
-
-
-                        <input type="hidden" name="booking-date" value="{{booking_date}}">
+                        <input type="hidden" name="confirm" value="true">
+                        <input type="hidden" name="booking_date" value="{{booking_date}}">
                         {% if not phone_failed %}
                             <input type="hidden" name="phone" value="{{phone}}">
                         {% endif %}
                         
-                            {% for i in service.items() %}
-                            <input type="hidden" name="{{i[0]}}" value="{{i[1]}}">
+                        {% for i in service.items() %}
+                        <input type="hidden" name="{{i[0]}}" value="{{i[1]}}">
                         {% endfor %}
                         <div class="order__product">
-                            <button type="submit" class="product__button modal_button">Confirm</button> 
+                            <button type="submit" class="product__button modal_button">{{index_lang.confirm}}</button> 
                         </div>
                             
                     </form>             
@@ -88,12 +87,21 @@
 {% endblock main %}
 
 {% block footer %}
-    {{super()}}
-    {% block footer__logo %}
-        <div class="col-12 col-md-4 footer__logo"><a href="{{url_for('index')}}" class="footer__nav-link">CARNERD</a></div>
-    {% endblock footer__logo %}
-    {% block footer_nav %}
+<footer>        
+    <div class="container">
+        <div class="row row__footer">
+            {% block footer__logo %}
+            <div class="col-12 col-md-4 footer__logo"><a href="{{url_for('index')}}" class="footer__nav-link">CARNERD</a></div>
+            {% endblock footer__logo %}
+            
+            {% block footer_nav %}
+            
+            {% endblock footer_nav %}
+        </div>
+        <div class="all_rights">2023 © All rights reserved</div>
+        
+    </div>    
+</footer>
     
-    {% endblock footer_nav %}
 
 {% endblock footer %}

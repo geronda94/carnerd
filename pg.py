@@ -58,6 +58,13 @@ def check_booking_date(date):
         return date
 
 
+def check_booking_time(time):
+    if not time:
+        return None
+    else:
+        return time
+
+
 
 def services_filter(services_list, lang:str = 'ro'):
     new_list = []
@@ -186,7 +193,7 @@ class Services:
 
         posted_date = datetime_now()        
         check_number = self.__request.select('SELECT client_phone FROM start_clients WHERE client_phone = %s', (phone,))
-        print(len(check_number))
+        
         if len(check_number) == 0:
             self.__request.insert('''INSERT INTO start_clients(client_phone, service_link, service_name, booking_date, order_posted, session_id )
                                                 VALUES(%s,%s,%s,%s,%s,%s)''',
@@ -201,61 +208,38 @@ class Services:
 
 
 
-    def service_booking(self, phone:str, service_link:str, booking_date, 
-                                service_name, sid, lang: str = 'ro'):
-
+    def service_booking(self, sid, ip_address, booking_date, booking_time, client_phone, service_name, service_link,
+                        service_price, car_type,  lang: str = 'ro'):
+        
         posted_date = datetime_now()
+        booking_date = check_booking_date(booking_date)
+        booking_time = check_booking_time(booking_time)
 
-        self.__request.insert('''INSERT INTO booking(client_phone, service_link, service_name, booking_date, order_posted, session_id ,order_status)
-                                            VALUES(%s,%s,%s,%s,%s,%s,%s)''',
-                                            (phone, service_link, service_name, booking_date, posted_date, sid, 'posted-1',))
-        
-        
-
-
-
-
-class Orders:
-    def __init__(self, request: PgRequest):
-        self.__request = request
-
-
-#Для телеграм бота
-    def get_orders(self):
-        return self.__request.selectd('SELECT * FROM order_info WHERE order_status = %s ORDER BY id;',('posted',))
-
-
-    def order_status(self, order_id, status='in process'):
         try:
-            self.__request.insert("UPDATE order_info SET order_status=%s WHERE id = %s;", (status, order_id))
+            self.__request.insert('''INSERT INTO booking(session_id, ip_address, booking_date,
+                                booking_time, client_phone, service_name, service_link,
+                                service_price, car_type, order_posted, order_status, client_lang) 
+                                VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',
+                                    (sid, ip_address, booking_date, booking_time,client_phone, service_name,
+                                    service_link, service_price, car_type, posted_date, 'posted', lang,))
+            return True
+        
+        except Exception as ex:
+            print(ex)
+            return False
+        
+
+
+    def check_new_orders(self):
+        return self.__request.selectd('SELECT * FROM booking WHERE order_status = %s',('posted',))
+
+    def set_booking_status(self, booking_id, booking_status):
+        try:
+            self.__request.insert('UPDATE booking SET order_status = %s WHERE id = %s', (booking_status, booking_id,))
             return True
         except Exception as ex:
             print(ex)
             return False
-
-    def get_products(self, order_id):
-        try:
-            return self.__request.selectd("SELECT * FROM order_products WHERE order_id = %s;", (order_id,))
-        except Exception as ex:
-            print(ex)
-
-    def get_delivery(self, order_id):
-        try:
-            return self.__request.selectd("SELECT * FROM order_delivery WHERE order_id = %s;", (order_id,))
-        except Exception as ex:
-            print(ex)
-
-    def get_loaders(self, order_id):
-        try:
-            return self.__request.selectd("SELECT * FROM order_loaders WHERE order_id = %s;", (order_id,))
-        except Exception as ex:
-            print(ex)
-
-
-
-
-
-
 
 
 
@@ -265,4 +249,3 @@ request_db = PgRequest(connect)
 
 services = Services(request_db)
 
-# print(services.get_service('body-polishing', lang='ua')[0])
