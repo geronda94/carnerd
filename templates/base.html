@@ -65,13 +65,16 @@
                             </div> -->
                             <div class="carousel-inner">
                                 <div class="carousel-item slider__img active">
-                                <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                    <img src="{{url_for('static', filename='img/slider/slide1.jpg')}}" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item slider__img">
-                                <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                    <img src="{{url_for('static', filename='img/slider/slide2.jpg')}}" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item slider__img">
-                                <img src="{{url_for('static', filename='img/slider1.jpg')}}" class="d-block w-100" alt="...">
+                                    <img src="{{url_for('static', filename='img/slider/slide3.jpg')}}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item slider__img">
+                                    <img src="{{url_for('static', filename='img/slider/slide4.jpg')}}" class="d-block w-100" alt="...">
                                 </div>
                             </div>
                             
@@ -168,13 +171,13 @@
                         <h2 class="title__advantages section__title fs-1">{{index_lang.our_advantages}}</h2>
                     </div>
                 </div>
-
+                
                 <div class="row row__advantages">
                     <div class="col-sm-6 col-lg-3 advantages__item">
                         <div class="advantages__img">
                             <img src="{{url_for('static', filename='img/advantages/cleared_car.svg')}}" alt="">                            
                         </div>
-                        <div class="advantages__title">
+                        <div class="advantages__title {% if lang == 'ua' %}ua_font{% endif %}">
                             {{index_lang.advantages_1}}
                         </div>
                     </div>  
@@ -182,7 +185,7 @@
                         <div class="advantages__img">
                             <img src="{{url_for('static', filename='img/advantages/calendar.svg')}}" alt="">                            
                         </div>
-                        <div class="advantages__title">
+                        <div class="advantages__title {% if lang == 'ua' %}ua_font{% endif %}">
                             {{index_lang.advantages_2}}
                         </div>
                     </div> 
@@ -190,7 +193,7 @@
                         <div class="advantages__img">
                             <img src="{{url_for('static', filename='img/advantages/team_pro.svg')}}" alt="">                            
                         </div>
-                        <div class="advantages__title">
+                        <div class="advantages__title {% if lang == 'ua' %}ua_font{% endif %}">
                             {{index_lang.advantages_3}}
                         </div>
                     </div> 
@@ -198,7 +201,7 @@
                         <div class="advantages__img">
                             <img src="{{url_for('static', filename='img/advantages/cleaners.svg')}}" alt="">                            
                         </div>
-                        <div class="advantages__title">
+                        <div class="advantages__title {% if lang == 'ua' %}ua_font{% endif %}">
                             {{index_lang.advantages_4}}
                         </div>
                     </div>                   
@@ -235,7 +238,7 @@
                             {% for i in services %}
                             <div class="carousel-item {% if i.order_num == 2 %}active{% endif %}">
                                 <div class="product__card">
-                                    <h1 class="product__title">{{i.service_name}}</h1>
+                                    <h1 class="product__title {% if lang == 'ua' %}ua_product_font{% endif %}">{{i.service_name}}</h1>
                                     <div class="product__descriprion">
                                         {% if i.service_li %}
                                         <ul class="product__options">
@@ -252,7 +255,7 @@
                                     </div>
                                     <div class="order__product">
                                         <div class="product__price">{{i.service_types[0][1] | int}} RON</div>
-                                        <button type="button" class=" product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                                        <button type="button" class="{% if lang == 'ua' %}ua_order_product{% endif %} product__button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
                                         data-param="{{i.service_link}}">
                                         {{index_lang.register}}   
                                     </button>
@@ -416,7 +419,7 @@
                             
                             
                             <input type="hidden" name="service_link" id="service_input">
-                            <button type="submit" class="product__button modal__button">{{index_lang.next_step}}</button>
+                            <button type="submit" class="product__button modal__button {% if lang == 'ua' %}ua_order_product{% endif %}">{{index_lang.next_step}}</button>
                         </form>
 
                         
@@ -459,7 +462,7 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn product__button modal__button flash__button" data-bs-dismiss="modal">{{index_lang.close}}</button>
+                        <button type="button" class="btn product__button  {% if lang == 'ua' %}ua_order_product{% endif %} flash__button" data-bs-dismiss="modal">{{index_lang.close}}</button>
                     </div>
                 </div>
             </div>

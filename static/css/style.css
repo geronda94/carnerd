@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Inter:wght@100;200;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @font-face {
     font-family: 'Myriad'; /* Имя, которое будет использоваться для этого шрифта */
     src: url('../fonts/Myriad Pro Regular.ttf') format('truetype'), /* Формат TTF */
@@ -111,7 +112,7 @@ a{
     display: flex;
     align-items: center;
     overflow: hidden;
-    max-height: 500px;
+    max-height: 600px;
 }
 
 .slider__img{
@@ -319,7 +320,7 @@ li .lang__option:active{
     /* font-size: 35px; */
     text-transform: uppercase;
     text-align: center;
-    font-family: Cinzel;
+    font-family: Cinzel, Noto Serif;
     margin-top: 30px;
     margin-bottom: 30px;
     letter-spacing: 3px;
@@ -352,12 +353,16 @@ li .lang__option:active{
 }
 
 .advantages__title{
-    font-family: cinzel;
+    font-family: Cinzel, Noto Serif;
     font-size: 17pt;
     text-align: center;
     height: 130px;
 }
 
+.ua_font{
+    font-size: 15pt !important;
+    font-weight: 200;
+}
 
 
 
@@ -464,7 +469,7 @@ li .lang__option:active{
 }
 
 .product__title{
-    font-family: cinzel;
+    font-family: Cinzel, Noto Serif;
     font-size: 20pt;
     text-decoration: underline;
     font-weight: 600;
@@ -472,6 +477,9 @@ li .lang__option:active{
     color: var(--main-dark);
     grid-column: span 2;
     margin-right: 60% ;
+}
+.ua_product_font{
+    font-weight: 400;
 }
 
 .product__options{
@@ -508,11 +516,9 @@ li .lang__option:active{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: cinzel;
+    font-family: Cinzel, Noto Serif;
     font-size: 16pt;
     margin-top: 30px;
-    
-
 }
 
 
@@ -531,12 +537,16 @@ li .lang__option:active{
     font-weight: 600;
     border-radius: 0;
     text-transform: uppercase;
+    font-family: Cinzel, Noto Serif ;
 }
 
 .product__button:hover{
     background: #fff;
     color: var(--accent-color);
     
+}
+.ua_order_product{
+    font-weight: 300 !important;
 }
 
 
@@ -1005,7 +1015,7 @@ footer{
 
 
 .modal__button{
-    font-family: cinzel;
+    font-family: Cinzel, Noto Serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 7px 15px;

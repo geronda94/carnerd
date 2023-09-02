@@ -101,7 +101,7 @@ def register():
             
         else:
             
-            return render_template('register.html', title=title.get(lang), service=service_dict,
+            return render_template('register.html', title=title.get(lang), service=service_dict, lang=session.get('lang'),
                                     booking_date=booking_date, phone=phone, time_list=booking_time_list(), phone_failed=True,index_lang=index_lang.get(lang))
 
     else:

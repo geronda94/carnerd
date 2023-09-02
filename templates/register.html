@@ -62,7 +62,7 @@
                         <input type="hidden" name="{{i[0]}}" value="{{i[1]}}">
                         {% endfor %}
                         <div class="order__product">
-                            <button type="submit" class="product__button modal_button">{{index_lang.confirm}}</button> 
+                            <button type="submit" class="product__button modal_button  {% if lang == 'ua' %}ua_order_product{% endif %} ">{{index_lang.confirm}}</button> 
                         </div>
                             
                     </form>             
