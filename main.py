@@ -2,7 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request, session, f
 import json
 from datetime import datetime, timedelta
 import uuid
-from pg import services
+from pg import services, static
 from functions import number_validator, booking_time_list
 from lang import index_lang
 
@@ -12,7 +12,7 @@ app.secret_key = 'kl2sd34hfjkdalfads5fds46f6a1ds5fdasdsjcnflkad45damfefdsfq23534
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1000)
 
 languages = ['ro', 'en', 'ua']
-title = {'ro':'Carnerd - Spălătorie auto în București','en':'Carnerd - Car Wash in  the Bucuresti','ua':'Carnerd - Автомойка в Бухаресте'}
+title = {'ro':'Carnerd - Spălătorie auto în București','en':'Carnerd - Car Wash in  the Bucuresti','ua':'Carnerd - Автомийка в Бухаресті'}
 
 
 
@@ -20,10 +20,10 @@ title = {'ro':'Carnerd - Spălătorie auto în București','en':'Carnerd - Car W
 @app.route('/')
 def index():
     lang = session.get('lang')
-    
+    slider = static.select_slider(lang=lang)
     
     return render_template('index.html', lang=lang, languages=languages, services=services.get_services(lang=lang),
-                            title=title.get(lang), index_lang=index_lang.get(lang))
+                            title=title.get(lang), index_lang=index_lang.get(lang), slider=slider)
 
 
 
@@ -60,7 +60,7 @@ def register():
 
 
             print(booking_date)
-            if 'Select' not in request.form.get('car_type') and request.form.get('car_type'):
+            if '~' in request.form.get('car_type') and request.form.get('car_type'):
                 car_type = str(request.form.get('car_type')).split('~')[0]
                 service_price = str(request.form.get('car_type')).split('~')[1]
 

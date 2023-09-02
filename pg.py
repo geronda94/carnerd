@@ -59,7 +59,7 @@ def check_booking_date(date):
 
 
 def check_booking_time(time):
-    if not time:
+    if not time or len(time)!=5:
         return None
     else:
         return time
@@ -243,9 +243,32 @@ class Services:
 
 
 
+class Static:
+    def __init__(self, request: PgRequest):
+        self.__request = request
+
+    def select_slider(self, lang: str = 'ro'):
+        items =  self.__request.selectd('SELECT * FROM slider ORDER BY order_by;')
+        new_list = []
+
+        for i in items:
+            new_list.append({
+                'id':i.get('id'),
+                'photo_link':i.get('photo_link'),
+                'photo_name':i.get('photo_name'),
+                'order_by':i.get('order_by'),
+                'title':i.get(f'title_{lang}'),
+                'desc':i.get(f'desc_{lang}'),
+                'color':i.get(f'color')
+            })
+
+        return new_list
+
+
 
 connect = PgConnect(host=DB.host, port=DB.port, database=DB.database, user=DB.user, password=DB.password)
 request_db = PgRequest(connect)
 
 services = Services(request_db)
+static = Static(request_db)
 

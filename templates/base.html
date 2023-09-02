@@ -63,22 +63,24 @@
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                             </div> -->
-                            <div class="carousel-inner">
-                                <div class="carousel-item slider__img active">
-                                    <img src="{{url_for('static', filename='img/slider/slide1.jpg')}}" class="d-block w-100" alt="...">
+                            <div class="carousel-inner ">
+                                {% for i in slider %}
+                                <div class="carousel-item slider__img {% if i.order_by == 1 %}active{% endif %}">
+                                    <img src="{{url_for('static', filename='img/slider/')}}{{i.photo_link}}" class="d-block w-100 slider__image" alt="...">
+                                    {% if i.title %}
+                                    <div class="slider__text">
+                                        <div class="slider__text-wrapper">
+                                            <h1 class="slider__title" >{{i.title}}</h1>
+                                            {% if i.desc %}
+                                            <p class="slider__desc">{{i.desc}}</p>
+                                            {% endif %}
+                                        </div>                                    
+                                    </div>
+                                    {% endif %}
                                 </div>
-                                <div class="carousel-item slider__img">
-                                    <img src="{{url_for('static', filename='img/slider/slide2.jpg')}}" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item slider__img">
-                                    <img src="{{url_for('static', filename='img/slider/slide3.jpg')}}" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item slider__img">
-                                    <img src="{{url_for('static', filename='img/slider/slide4.jpg')}}" class="d-block w-100" alt="...">
-                                </div>
-                            </div>
-                            
-                            </div>
+                                {% endfor %}
+                            </div>                            
+                        </div>
                     </div>
                 </div>
             </div>
