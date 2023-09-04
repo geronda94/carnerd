@@ -82,6 +82,57 @@ CREATE TABLE slider(
     color_desc VARCHAR(15)
 );
 
+
+
+CREATE TABLE users (
+    id  SERIAL PRIMARY KEY,
+    login VARCHAR(30),
+    name VARCHAR(30),
+    permission VARCHAR(10),
+    psw TEXT,
+    last_login TIMESTAMP
+);
+
+INSERT INTO users(login, name, permission, psw) 
+VALUES ('goga94', 'Igor' , 'full', 'sha256:600000$LIovlBUCsNJppTzG$0b0cecd82cb81520acec85e4bbfe6b41f104d420793a30f049896111b891a0e8'),-- fulladmin
+('owner', 'Alexander' , 'full', 'sha256:600000$oDUS6w0yuofs0AjI$74d0c0d57f40b6601be917290244b8cddf08627dee7b3c301a13598a3cf7695d');-- ownerlogin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 INSERT INTO slider(photo_link, photo_name, order_by, title_ro, title_en, title_ua, desc_ro, desc_en, desc_ua, color_title, color_desc) 
 VALUES ('slide1.jpg','1-slide', '1', 'Photo title example', 'Photo title example', 'Пример заголовка для фото','Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, expedita.','Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, expedita.','Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, expedita.','#fff','#fff'),
 ('slide2.jpg','2-slide', '2','Photo title example', 'Photo title example', 'Пример заголовка для фото','Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, expedita.','Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, expedita.','Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, expedita.','#fff','#fff'),

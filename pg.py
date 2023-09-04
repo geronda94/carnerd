@@ -266,9 +266,29 @@ class Static:
 
 
 
+class Users:
+    def __init__(self, request: PgRequest):
+        self.__request = request
+
+    def get_user(self, user_id: str ):
+        result = self.__request.selectd('SELECT * FROM users WHERE id = %s', (user_id,))[0]
+        return result
+
+    def user_for_login(self, login: str ):
+        try:
+            result = self.__request.selectd('SELECT * FROM users WHERE login = %s', (login,))[0]
+            return result
+        except Exception as ex:
+            return False
+    
+
+
+
+
 connect = PgConnect(host=DB.host, port=DB.port, database=DB.database, user=DB.user, password=DB.password)
 request_db = PgRequest(connect)
 
 services = Services(request_db)
 static = Static(request_db)
+users = Users(request_db)
 

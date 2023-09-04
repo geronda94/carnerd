@@ -3,29 +3,29 @@ from flask_login import UserMixin
 
 
 class UserLogin(UserMixin):
-    def fromDB(self,  user_id, db):
-        self.__user = db.getUser(user_id)
+    def set_user(self,  user_login, users):
+        self.__user = users.user_for_login(user_login)
         return self
+    
 
     def create(self, user):
         self.__user = user
-        print(user)
         return self
+    
 
     def get_id(self):
         res = str(self.__user['id'])
-        print(res)
         return res
+    
 
     def getName(self):
         res=str(self.__user['name'] if self.__user['name'] else "Без имени")
         return res
+    
 
-
-    def getEmail(self):
-        res = str(self.__user['email'] if self.__user['email'] else "Без имени")
-        print(res)
-        return res
+    def getPermission(self):
+        return str(self.__user.get('permission'))
+    
 
     def getAvatar(self, app):
         img = None
@@ -53,10 +53,15 @@ class UserLogin(UserMixin):
     def is_authenticated(self):
         return True
     
+    
     def is_active(self):
         return True
     
     
     def is_anonimous(self):
         return False
+
+
+
+
 

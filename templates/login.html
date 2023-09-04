@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block includes %}
+    {{super()}}
+{% endblock includes %}
+{% block header %}
+    {% block top_header %}
+        {{super()}}
+    {% endblock top_header %}
+{% endblock header %}
+{% block nav_header %}
+    
+{% endblock nav_header %}
+
+
+
+
+{% block main %}
+    {% block booking %}
+    <section class="booking" id="booking">
+        <div class="container-fluid booking__title-container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="title__booking section__title fs-4">Вход в админ панель</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="{{url_for('login')}}"  class="booking__form" method="post">
+                        
+                        {% if check_login == False %}
+                        <div class="">
+                            <p class="form-label label__wrong fs-6">Неверный логин или пароль!</label>
+                        </div>                            
+                        {% endif %}
+                        
+                        <div class="form-floating mb-3">
+                            <input type="text" name="login" class="form-control" id="floatingInput" placeholder="login">
+                            <label for="floatingInput">Логин</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" name="psw" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Пароль</label>
+                        </div>
+                            
+
+                        <div class="order__product ">
+                            <button type="submit" class="product__button" style="padding: 5px 35px;">Войти</button> 
+                        </div>
+                            
+                    </form>             
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>    
+    {% endblock booking %}
+
+    {% block location %}
+       
+    {% endblock location %}
+    {% block contacts %}
+       
+    {% endblock contacts %}
+    {% block about %}
+        
+    {% endblock about %}
+{% endblock main %}
+
+{% block footer %}
+<footer>        
+    <div class="container">
+        <div class="row row__footer">
+            {% block footer__logo %}
+            <div class="col-12 col-md-4 footer__logo"><a href="{{url_for('index')}}" class="footer__nav-link">CARNERD</a></div>
+            {% endblock footer__logo %}
+            
+            {% block footer_nav %}
+            
+            {% endblock footer_nav %}
+        </div>
+        <div class="all_rights">2023 © All rights reserved</div>
+        
+    </div>    
+</footer>
+    
+
+{% endblock footer %}
+
+{% block modal %}
+    
+{% endblock modal %}
+
+
+{% block scripts %}
+    {{super()}}
+{% endblock scripts %}

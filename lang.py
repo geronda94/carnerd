@@ -30,7 +30,7 @@ index_lang = {
         'phone_is_wrong': 'Numărul de telefon este greșit, vă rugăm să reintroduceți',
         'enter_your_phone': 'Introduceți numărul de telefon',
         'next_step': 'pasul următor',
-        'booking_for_service': 'rezervare pentru serviciu',
+        'booking_for_service': 'rezervare pentru',
         'your_phone': 'Telefonul tău',
         'select_time_for_service': 'Selectați ora pentru serviciu',
         'select_service_option': 'Selectați opțiunea de serviciu',

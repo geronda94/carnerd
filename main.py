@@ -2,10 +2,13 @@ from flask import Flask, redirect, url_for, render_template, request, session, f
 import json
 from datetime import datetime, timedelta
 import uuid
-from flask_login import LoginManager
-from pg import services, static
+from pg import services, static, users
 from functions import number_validator, booking_time_list
 from lang import index_lang
+from flask_login import LoginManager, login_user
+from UserLogin import UserLogin
+from werkzeug.security import generate_password_hash, check_password_hash
+from UserLogin import UserLogin
 
 
 
@@ -17,6 +20,31 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1000)
 languages = ['ro', 'en', 'ua']
 title = {'ro':'Carnerd - Spălătorie auto în București','en':'Carnerd - Car Wash in  the Bucuresti','ua':'Carnerd - Автомийка в Бухаресті'}
 
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message = 'Вы еще не вошли в свой аккаунт. <p> пожалуйста авторизируйтесь</p>'
+login_manager.login_message_category = 'success'
+
+@login_manager.user_loader
+def loader_user(user_login: str):
+    print('login')
+    return UserLogin().set_user(user_login, users)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###################################################
+#START Landing BLOCK
 
 
 
@@ -110,16 +138,51 @@ def register():
     else:
         return redirect(url_for('index'))
 
-@app.route('/admin')
-def admin_enter():
-    return 'True'
-
-
 
 @app.route('/lang/<lang>')
 def select_lang(lang):
     session['lang'] = str(lang)
     return redirect(url_for('index'))
+
+
+
+
+
+
+#END  LANDING BLOCK
+#########################################################
+
+
+
+###################################################
+#START Admin BLOCK
+
+
+
+
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    check_login = None
+
+
+
+    if request.method == 'POST':
+        user = users.user_for_login(request.form.get('login'))
+        psw = request.form.get('psw')
+
+        if user and check_password_hash(user.get('psw'),psw):
+            user_data = UserLogin().create(user)
+            login_user(user_data)
+
+
+            return user_data.getName()
+        else:
+            check_login = False
+
+    return render_template('login.html', title='Carnerd - Admin', check_login=check_login)
+
 
 
 
