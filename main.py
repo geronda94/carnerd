@@ -2,12 +2,15 @@ from flask import Flask, redirect, url_for, render_template, request, session, f
 import json
 from datetime import datetime, timedelta
 import uuid
+from flask_login import LoginManager
 from pg import services, static
 from functions import number_validator, booking_time_list
 from lang import index_lang
 
 
+
 app = Flask(__name__)
+
 app.secret_key = 'kl2sd34hfjkdalfads5fds46f6a1ds5fdasdsjcnflkad45damfefdsfq235346aefsdropee23'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1000)
 
@@ -107,8 +110,9 @@ def register():
     else:
         return redirect(url_for('index'))
 
-        
-
+@app.route('/admin')
+def admin_enter():
+    return 'True'
 
 
 
