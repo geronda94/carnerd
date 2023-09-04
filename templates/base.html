@@ -398,6 +398,7 @@
     {% block modal %}
     <div class="modal__windows">
     <!-- Modal -->
+    {% block modal_service %}
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -431,12 +432,11 @@
                     <button type="button" class="btn btn-primary">Save changes</button>
                     </div> -->
                 </div>
-        </div>
+        </div>            
+        {% endblock modal_service %}
 
 
-
-
-
+        {% block modal_flash %}         
         {% for cat,msg in get_flashed_messages(with_categories=true) %}
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -470,7 +470,9 @@
             </div>
         </div>
         {% endfor %}
+        {% endblock modal_flash %}
     </div>
+
     {% endblock modal %}
 
     

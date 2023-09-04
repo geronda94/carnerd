@@ -93,7 +93,44 @@
 {% endblock footer %}
 
 {% block modal %}
-    
+
+
+
+{% block modal_flash %}       
+{% for cat,msg in get_flashed_messages(with_categories=true) %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="myModal">Информационное сообщение</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body flash__{{cat}}">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 flash__content">
+                            {% if cat == 'success' %}
+                            <div class="flash__img"><i class="fa-regular fa-circle-check" style="color: #1e9833;"></i></div> 
+                            {% endif %}
+                            {% if cat == 'error' %}
+                            <div class="flash__img"><i class="fa-solid fa-triangle-exclamation" style="color: #a01f1f;"></i></div> 
+                            {% endif %}                    
+                            <div class="flash__msg">{{msg}}</div> 
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn product__button   flash__button" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock modal_flash %}   
 {% endblock modal %}
 
 

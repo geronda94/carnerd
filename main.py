@@ -179,9 +179,9 @@ def login():
 
             return user_data.getName()
         else:
-            check_login = False
+            flash('Неверный логин или пароль', category='error')
 
-    return render_template('login.html', title='Carnerd - Admin', check_login=check_login)
+    return render_template('login.html', title='Carnerd - Admin', check_login=check_login,lang='ua', index_lang=index_lang)
 
 
 
