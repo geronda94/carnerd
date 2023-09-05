@@ -30,7 +30,7 @@ CREATE TABLE start_clients(
     service_name VARCHAR(35),
     service_link  VARCHAR(30),
     order_posted TIMESTAMP
-)
+);
 
 
 CREATE TABLE services (
@@ -183,7 +183,7 @@ INSERT INTO services(
         'Body wash',  
         'Body wash',  
         'Мойка кузова',
-        'service1.jpg',
+        'body_wash.jpg',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
@@ -205,7 +205,7 @@ INSERT INTO services(
         'Complex wash',  
         'Complex wash',  
         'Комплексная мойка',
-        'service1.jpg',
+        'complex.jpeg',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
@@ -227,7 +227,7 @@ INSERT INTO services(
         'Premium wash',  
         'Premium wash',  
         'Премиальная мойка',
-        'service1.jpg',
+        'premium_wash.jpg',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
@@ -249,7 +249,7 @@ INSERT INTO services(
         'Interior cleaning',  
         'Interior cleaning',  
         'Химчистка салона',
-        'service1.jpg',
+        'himchistka.jpg',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
@@ -271,7 +271,7 @@ INSERT INTO services(
         'Body polishing',  
         'Body polishing',  
         'Полировка кузова',
-        'service1.jpg',
+        'premium_wash.jpg',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
         'Thorough body wash, Car interior cleaning, Interior refresh',
