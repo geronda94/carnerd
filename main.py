@@ -109,7 +109,7 @@ def register():
 
             send_order = services.service_booking(sid=session_id, 
                                                   ip_address=ip_address,
-                                                  booking_date=booking_date = tuple(booking_date.split('-')[::-1]),
+                                                  booking_date=booking_date,
                                                   booking_time=booking_time,
                                                   client_phone=client_phone,
                                                   service_name=service_name,
