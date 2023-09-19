@@ -1,4 +1,8 @@
-CREATE DATABASE carnerd;
+systemctl carnerd_bot
+
+
+
+CREATE DATABASE carnerd TEMPLATE template0 ENCODING 'UTF8' LC_COLLATE 'en_US.utf8' LC_CTYPE 'en_US.utf8';
 CREATE USER washer WITH PASSWORD 'detailing';
 ALTER USER washer WITH SUPERUSER;
 GRANT ALL PRIVILEGES ON DATABASE carnerd TO washer;
