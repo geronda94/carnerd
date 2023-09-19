@@ -89,8 +89,6 @@ def register():
             else:
                 booking_time = None
 
-
-            print(booking_date)
             if '~' in request.form.get('car_type') and request.form.get('car_type'):
                 car_type = str(request.form.get('car_type')).split('~')[0]
                 service_price = str(request.form.get('car_type')).split('~')[1]
