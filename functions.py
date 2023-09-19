@@ -35,10 +35,10 @@ def number_validator(number: str):
             return False
         
 
-    if 9 == len(new_number) and new_number[0] != '0':
+    if  len(new_number) == 9 and new_number[0] != '0':
         new_number = '0'+new_number
 
-    elif len(new_number) == 10 and new_number[0] != '0':
+    elif len(new_number) > 9 and new_number[0] != '0':
         return False
 
     elif len(new_number) >= 11 and new_number[0] != '+':
@@ -47,6 +47,6 @@ def number_validator(number: str):
     else:
         return False
     
-    return False if 15 < len(new_number) < 10 else new_number
+    return False if 15 < len(new_number) or len(new_number) < 10 else new_number
 
 
