@@ -10,8 +10,8 @@ from pg import services
 
 
 #Блок инициализации#############################
-TOKEN = '6637233263:AAENxAJnAZJbNjpqKkFwcHfPnoeyNI70v8k'                      
-ADMIN = '5774941154'                  
+TOKEN = '6474206551:AAHVfuznKd6sC4IgYEWkthSdy7SkCoIY6T0'                      
+ADMIN = '6458439503'                  
 ################################################
 
 #Блок стартовых функций#########################
