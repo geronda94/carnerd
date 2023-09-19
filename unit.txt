@@ -1,0 +1,39 @@
+systemctl carnerd_bot
+
+
+
+
+
+[Unit]
+Description=Carnerd aiogram3 service bot
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/carnerd
+Environment="PATH=/home/carnerd/venv/bin"
+ExecStart=/home/carnerd/venv/bin/python3.11 /home/carnerd/bot.py
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+sudo systemctl edit --force --full carnerd_site
+systemctl carnerd_site
+
+
+[Unit]
+Description=Carnerd gunicorn instance
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/home/carnerd
+Environment="PATH=/home/carnerd/venv/bin"
+ExecStart=/home/carnerd/venv/bin/gunicorn --workers 2 --bind unix:gunicorn.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
