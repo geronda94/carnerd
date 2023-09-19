@@ -1,3 +1,6 @@
-from werkzeug.security import generate_password_hash, check_password_hash
+booking_date = "12-09-2023"
 
-print(generate_password_hash('fulladmin'))
+if booking_date:
+    date = tuple(booking_date.split('-')[::-1])
+
+print(date)

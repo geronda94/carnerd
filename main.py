@@ -67,7 +67,7 @@ def register():
         service_link = request.form.get('service_link')        
         booking_date = request.form.get('booking_date')
         if booking_date:
-            booking_date = datetime.strptime(booking_date, "%Y-%m-%d")
+            booking_date = tuple(booking_date.split('-')[::-1])
 
         #Получаем еще раз услугу из бд
         service_dict = services.get_service(service_link=service_link, lang=lang)[0]
@@ -82,7 +82,7 @@ def register():
             service_id = request.form.get('service_id')
             booking_date = request.form.get('booking_date')
             if booking_date:
-                booking_date = datetime.strptime(booking_date, "%Y-%m-%d")
+                booking_date = tuple(booking_date.split('-')[::-1])
             client_phone = phone
             #ip_address = request.remote_addr
             ip_address = None
