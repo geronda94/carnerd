@@ -50,6 +50,9 @@ def refactor_img(text):
 
 
 
+def error_log(ex):
+    with open('error.txt', 'a') as error_file:
+                error_file.write(f'Ошибка: {str(ex)}\n')
 
 def check_booking_date(date):
     if not date:
@@ -225,8 +228,7 @@ class Services:
             return True
         
         except Exception as ex:
-            with open('error.txt', 'a') as error_file:
-                error_file.write(f'Ошибка: {str(ex)}\n')
+
             return False
         
 
@@ -238,9 +240,9 @@ class Services:
         try:
             self.__request.insert('UPDATE booking SET order_status = %s WHERE id = %s', (booking_status, booking_id,))
             return True
+        
         except Exception as ex:
-            with open('error.txt', 'a') as error_file:
-                error_file.write(f'Ошибка: {str(ex)}\n')
+
             return False
 
 
@@ -282,8 +284,7 @@ class Users:
             return result
         
         except Exception as ex:
-            with open('error.txt', 'a') as error_file:
-                error_file.write(f'Ошибка: {str(ex)}\n')
+            
             return False
     
 
