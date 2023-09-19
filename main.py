@@ -58,6 +58,11 @@ def index():
 
 
 
+
+
+
+
+
 @app.route('/register', methods=['POST'])
 def register():
     lang = session.get('lang')
