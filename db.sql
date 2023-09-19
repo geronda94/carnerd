@@ -12,15 +12,15 @@ CREATE TABLE booking(
     ip_address inet,
     booking_date DATE,
     booking_time TIME,
-    client_phone VARCHAR(15),
-    client_name VARCHAR(30),
-    client_lang VARCHAR(5),
-    service_name VARCHAR(35),
-    service_link  VARCHAR(30),
+    client_phone TEXT,
+    client_name TEXT,
+    client_lang TEXT,
+    service_name TEXT,
+    service_link  TEXT,
     service_price DECIMAL,
-    car_type VARCHAR(30),
+    car_type TEXT,
     order_posted TIMESTAMP,
-    order_status VARCHAR(15)
+    order_status TEXT
 );
 
 CREATE TABLE start_clients(
@@ -28,9 +28,9 @@ CREATE TABLE start_clients(
     session_id TEXT,
     ip_address inet,
     booking_date DATE,
-    client_phone VARCHAR(15),
-    service_name VARCHAR(35),
-    service_link  VARCHAR(30),
+    client_phone TEXT,
+    service_name TEXT,
+    service_link  TEXT,
     order_posted TIMESTAMP
 );
 
@@ -38,10 +38,10 @@ CREATE TABLE start_clients(
 CREATE TABLE services (
     id SERIAL PRIMARY KEY,
     order_num INT,
-    service_link VARCHAR(30),
-    service_name_ro VARCHAR(35),
-    service_name_en VARCHAR(35),
-    service_name_ua VARCHAR(35),
+    service_link TEXT,
+    service_name_ro TEXT,
+    service_name_en TEXT,
+    service_name_ua TEXT,
     avatar_link TEXT,
     service_li_ro TEXT,
     service_li_en TEXT,
@@ -50,21 +50,21 @@ CREATE TABLE services (
     service_description_ro TEXT,
     service_description_en TEXT,
     service_description_ua TEXT,
-    type_1_name_ro VARCHAR(30),
-    type_1_name_en VARCHAR(30),
-    type_1_name_ua VARCHAR(30),
+    type_1_name_ro TEXT,
+    type_1_name_en TEXT,
+    type_1_name_ua TEXT,
     type_1_price DECIMAL,
-    type_2_name_ro VARCHAR(30),
-    type_2_name_en VARCHAR(30),
-    type_2_name_ua VARCHAR(30),
+    type_2_name_ro TEXT,
+    type_2_name_en TEXT,
+    type_2_name_ua TEXT,
     type_2_price DECIMAL,
-    type_3_name_ro VARCHAR(30),
-    type_3_name_en VARCHAR(30),
-    type_3_name_ua VARCHAR(30),
+    type_3_name_ro TEXT,
+    type_3_name_en TEXT,
+    type_3_name_ua TEXT,
     type_3_price DECIMAL,
-    type_4_name_ro VARCHAR(30),
-    type_4_name_en VARCHAR(30),
-    type_4_name_ua VARCHAR(30),
+    type_4_name_ro TEXT,
+    type_4_name_en TEXT,
+    type_4_name_ua TEXT,
     type_4_price DECIMAL
 );
 
@@ -80,17 +80,17 @@ CREATE TABLE slider(
     desc_ro TEXT,
     desc_en TEXT,
     desc_ua TEXT,
-    color_title VARCHAR(15),
-    color_desc VARCHAR(15)
+    color_title TEXT,
+    color_desc TEXT
 );
 
 
 
 CREATE TABLE users (
     id  SERIAL PRIMARY KEY,
-    login VARCHAR(30),
-    name VARCHAR(30),
-    permission VARCHAR(10),
+    login TEXT,
+    name TEXT,
+    permission TEXT,
     psw TEXT,
     last_login TIMESTAMP
 );
