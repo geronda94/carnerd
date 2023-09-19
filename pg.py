@@ -228,7 +228,7 @@ class Services:
             return True
         
         except Exception as ex:
-
+            error_log(ex=ex)
             return False
         
 
@@ -242,7 +242,7 @@ class Services:
             return True
         
         except Exception as ex:
-
+            error_log(ex=ex)
             return False
 
 
@@ -284,7 +284,7 @@ class Users:
             return result
         
         except Exception as ex:
-            
+            error_log(ex=ex)
             return False
     
 
