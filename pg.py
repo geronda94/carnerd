@@ -225,7 +225,8 @@ class Services:
             return True
         
         except Exception as ex:
-            print(ex)
+            with open('error.txt', 'a') as error_file:
+                error_file.write(f'Ошибка: {str(ex)}\n')
             return False
         
 
@@ -238,7 +239,8 @@ class Services:
             self.__request.insert('UPDATE booking SET order_status = %s WHERE id = %s', (booking_status, booking_id,))
             return True
         except Exception as ex:
-            print(ex)
+            with open('error.txt', 'a') as error_file:
+                error_file.write(f'Ошибка: {str(ex)}\n')
             return False
 
 
@@ -278,7 +280,10 @@ class Users:
         try:
             result = self.__request.selectd('SELECT * FROM users WHERE login = %s', (login,))[0]
             return result
+        
         except Exception as ex:
+            with open('error.txt', 'a') as error_file:
+                error_file.write(f'Ошибка: {str(ex)}\n')
             return False
     
 
