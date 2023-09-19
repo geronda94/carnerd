@@ -71,8 +71,8 @@ def register():
         phone = number_validator(request.form.get('phone'))        
         service_link = request.form.get('service_link')        
         booking_date = request.form.get('booking_date')
-        if booking_date:
-            booking_date = tuple(booking_date.split('-')[::-1])
+
+            
 
         #Получаем еще раз услугу из бд
         service_dict = services.get_service(service_link=service_link, lang=lang)[0]
@@ -109,7 +109,7 @@ def register():
 
             send_order = services.service_booking(sid=session_id, 
                                                   ip_address=ip_address,
-                                                  booking_date=booking_date,
+                                                  booking_date=booking_date = tuple(booking_date.split('-')[::-1]),
                                                   booking_time=booking_time,
                                                   client_phone=client_phone,
                                                   service_name=service_name,
