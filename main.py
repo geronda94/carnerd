@@ -80,7 +80,8 @@ def register():
             service_id = request.form.get('service_id')
             booking_date = request.form.get('booking_date')
             client_phone = phone
-            ip_address = request.remote_addr
+            #ip_address = request.remote_addr
+            ip_address = None
             session_id = str(session.get('uid'))
             
 
