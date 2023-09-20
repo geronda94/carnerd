@@ -196,7 +196,7 @@ class Services:
                                 service_name, sid, lang: str = 'ro'):
         
         booking_date = check_booking_date(booking_date)
-        print(booking_date)
+        
         posted_date = datetime_now()        
         check_number = self.__request.select('SELECT client_phone FROM start_clients WHERE client_phone = %s', (phone,))
         
@@ -219,7 +219,7 @@ class Services:
         
         posted_date = datetime_now()
         booking_date = check_booking_date(booking_date)
-        print(booking_date)
+        
         booking_time = check_booking_time(booking_time)
 
         try:
