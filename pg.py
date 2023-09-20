@@ -59,7 +59,7 @@ def check_booking_date(date):
         return None
     else:
         if not date[2].isdigit():
-            return date
+            return tuple(date.split('-'))
 
         return tuple(date.split('-')[::-1])
 
