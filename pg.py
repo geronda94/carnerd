@@ -58,7 +58,7 @@ def check_booking_date(date):
     if not date:
         return None
     else:
-        return date
+        return tuple(date.split('-')[::-1])
 
 
 def check_booking_time(time):
@@ -216,6 +216,7 @@ class Services:
         
         posted_date = datetime_now()
         booking_date = check_booking_date(booking_date)
+        
         booking_time = check_booking_time(booking_time)
 
         try:
