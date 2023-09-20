@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-
+from flask import request
 
 def booking_time_list():    
     # Время начала и конца интервала
@@ -50,5 +50,11 @@ def number_validator(number: str):
         return False
     
 
+def get_ip():
+    ip_list = request.headers.getlist("X-Forwarded-For")
+    user_ip = ip_list[0] if ip_list else request.remote_addr
+
+
+    return user_ip
 
 

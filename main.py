@@ -3,7 +3,7 @@ import json
 from datetime import datetime, timedelta
 import uuid
 from pg import services, static, users
-from functions import number_validator, booking_time_list
+from functions import number_validator, booking_time_list, get_ip
 from lang import index_lang
 from flask_login import LoginManager, login_user
 from UserLogin import UserLogin
@@ -89,7 +89,7 @@ def register():
             booking_date = request.form.get('booking_date')
             
             client_phone = phone
-            ip_address = request.remote_addr
+            ip_address = get_ip()
             # ip_address = None
             session_id = str(session.get('uid'))
             
