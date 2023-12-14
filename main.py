@@ -202,7 +202,10 @@ def login():
 
 
 
-
+@app.route('/test')
+def test():
+    with open('1.txt', 'w') as file:
+        file.write(f'writed {str(datetime.now())}')
 
 
 
